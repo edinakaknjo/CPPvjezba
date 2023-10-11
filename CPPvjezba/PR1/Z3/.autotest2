@@ -1,0 +1,135 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Ispit 1, Zadatak 3",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "std::cout<<\"----------------------- AT 1 -----------------------\"<<std::endl;\n    \/\/ AT 1: Test main-a (primjer iz postavke)\n    \/*\n    \"   Hop, cup, na kalup, cet\u2019ri babe jedan zub!\"\n    *\/\n    std::cout<<std::endl;\n    {\n        _main();\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 2 -----------------------\"<<std::endl;\n    \/\/ AT 2: Test main-a (primjer iz postavke izvrnut)\n    \/*\n    \"   ,poH ,puc an ,pulak ir\u2019tec ebab nadej !buz\"\n    *\/\n    std::cout<<std::endl;\n    {\n        _main();\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 3 -----------------------\"<<std::endl;\n    \/\/ AT 3: Poziv funkcije\n    std::cout << std::endl;\n    {\n        std::string s = \"Da li funkcija postoji?\";\n        ObrniRijeci(s);\n\n        std::cout << \"OK\";\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 4 -----------------------\"<<std::endl;\n    \/\/ AT 4: Prazan string (sastavni dio autotesta je '_')\n    std::cout << std::endl;\n    {\n        std::string s = \"\";\n        std::cout << \"String s obrnutim rijecima: \" << ObrniRijeci(s) << \"_\";\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 5 -----------------------\"<<std::endl;\n    \/\/ AT 5: Space string\n    std::cout << std::endl;\n    {\n        std::string s = \" \";\n        std::cout << \"String s obrnutim rijecima: \" << ObrniRijeci(s) << \"_\";\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "   Hop, cup, na kalup, cet'ri babe jedan zub!\n   ,poH ,puc an ,pulak ir'tec ebab nadej !buz\n"
+                },
+                "expect": [
+                    "----------------------- AT 1 -----------------------\n\nUnesi string: String s obrnutim rijecima:    ,poH ,puc an ,pulak ir'tec ebab nadej !buz\n----------------------- AT 2 -----------------------\n\nUnesi string: String s obrnutim rijecima:    Hop, cup, na kalup, cet'ri babe jedan zub!\n----------------------- AT 3 -----------------------\n\nOK\n----------------------- AT 4 -----------------------\n\nString s obrnutim rijecima: _\n----------------------- AT 5 -----------------------\n\nString s obrnutim rijecima:  _"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "   Hop, cup, na kalup, cet'ri babe jedan zub!\n   ,poH ,puc an ,pulak ir'tec ebab nadej !buz\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "   Hop, cup, na kalup, cet'ri babe jedan zub!\n   ,poH ,puc an ,pulak ir'tec ebab nadej !buz\n"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "std::cout<<\"----------------------- AT 6 -----------------------\"<<std::endl;\n    \/\/ AT 6: Tab string\n    std::cout << std::endl;\n    {\n        std::string s = \"   \";\n        std::cout << \"String s obrnutim rijecima: \" << ObrniRijeci(s) << \"_\";\n    }\n    \n    std::cout<<std::endl<<\"----------------------- AT 7 -----------------------\"<<std::endl;\n    \/\/ AT 7: String pocinje sa space\n    std::cout << std::endl;\n    {\n        std::string s = \" Po trnju do zvijezda!\";\n        std::cout << \"String s obrnutim rijecima: \" << ObrniRijeci(s);\n    }\n    \n    std::cout<<std::endl<<\"----------------------- AT 8 -----------------------\"<<std::endl;\n    \/\/ AT 8: String ne pocinje sa space\n    std::cout << std::endl;\n    {\n        std::string s = \"if u fail to prepare prepare to fail\";\n        std::cout << \"String s obrnutim rijecima: \" << ObrniRijeci(s);\n    }\n    \n    std::cout<<std::endl<<\"----------------------- AT 9 -----------------------\"<<std::endl;\n    \/\/ AT 9: Jedna rijec\n    std::cout << std::endl;\n    {\n        std::string s = \"Tehnike+programiranja\";\n        std::cout << \"String s obrnutim rijecima: \" << ObrniRijeci(s);\n    }\n    \n    std::cout<<std::endl<<\"----------------------- AT 10 -----------------------\"<<std::endl;\n    \/\/ AT 10: String zavrsava sa space\n    std::cout << std::endl;\n    {\n        std::string s = \"It doesn't work... Why? It works... Why??? \";\n        std::cout << \"String s obrnutim rijecima: \" << ObrniRijeci(s) << \"_\";\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "----------------------- AT 6 -----------------------\n\nString s obrnutim rijecima:    _\n----------------------- AT 7 -----------------------\n\nString s obrnutim rijecima:  oP ujnrt od !adzejivz\n----------------------- AT 8 -----------------------\n\nString s obrnutim rijecima: fi u liaf ot eraperp eraperp ot liaf\n----------------------- AT 9 -----------------------\n\nString s obrnutim rijecima: ajnarimargorp+ekinheT\n----------------------- AT 10 -----------------------\n\nString s obrnutim rijecima: tI t'nseod ...krow ?yhW tI ...skrow ???yhW _"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "std::cout<<\"----------------------- AT 11 -----------------------\"<<std::endl;\n    \/\/ AT 11: String pocinje i zavrsava sa vise space-ova\/space-ovi izmedju rijeci\n    std::cout << std::endl;\n    {\n        std::string s = \"   My code     never has bugs,   it just developes   random   unexpected       FEATURES!   \";\n        std::cout << \"String s obrnutim rijecima: \" << ObrniRijeci(s) <<\"_\";\n    }\n    \n    std::cout<<std::endl<<\"----------------------- AT 12 -----------------------\"<<std::endl;\n    \/\/ AT 12: Sve rijeci u stringu su palindrom 1\/2\n    std::cout << std::endl;\n    {\n        std::string s = \"tattarrattat Wassamassaw\";\n        std::cout << \"String s obrnutim rijecima: \" << ObrniRijeci(s);\n    }\n    \n    std::cout<<std::endl<<\"----------------------- AT 13 -----------------------\"<<std::endl;\n    \/\/ AT 13: Sve rijeci u stringu su palindrom 2\/2\n    std::cout << std::endl;\n    {\n        std::string s = \"SOS ...---...\";\n        std::cout << \"String s obrnutim rijecima: \" << ObrniRijeci(s);\n    }\n    \n    std::cout<<std::endl<<\"----------------------- AT 14 -----------------------\"<<std::endl;\n    \/\/ AT 14: String + izvrnut string\n    std::cout << std::endl;\n    {\n        std::string s = \" Hello world!      olleH !dlrow    \";\n        std::cout << \"String s obrnutim rijecima: \" << ObrniRijeci(s) << \"_\";\n    }\n    \n    std::cout<<std::endl<<\"----------------------- AT 15 -----------------------\"<<std::endl;\n    \/\/ AT 15: String: slova, cifre, znakovi\n    std::cout << std::endl;\n    {\n        std::string s = \"You are the SEMICOLON (;) to my statements <3 <3 <3!!!\";\n        std::cout << \"String s obrnutim rijecima: \" << ObrniRijeci(s);\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "----------------------- AT 11 -----------------------\n\nString s obrnutim rijecima:    yM edoc     reven sah ,sgub   ti tsuj sepoleved   modnar   detcepxenu       !SERUTAEF   _\n----------------------- AT 12 -----------------------\n\nString s obrnutim rijecima: tattarrattat wassamassaW\n----------------------- AT 13 -----------------------\n\nString s obrnutim rijecima: SOS ...---...\n----------------------- AT 14 -----------------------\n\nString s obrnutim rijecima:  olleH !dlrow      Hello world!    _\n----------------------- AT 15 -----------------------\n\nString s obrnutim rijecima: uoY era eht NOLOCIMES );( ot ym stnemetats 3< 3< !!!3<"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

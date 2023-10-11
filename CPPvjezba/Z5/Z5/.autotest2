@@ -1,0 +1,170 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 5, Zadatak 5",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 5\n\/\/ Odgovorni asistent: Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 5, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/AT 1: Testiranje izuzetaka konstruktora\n    {\n        try\n        {\n            Matrica<int> m1(\"datoteka.DAT\", true);\n        }\n        catch (const std::logic_error& e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n        catch(...)\n        {\n            std::cout << \"Neispravan tip izuzetka!\";\n        }\n\n        try\n        {\n            Matrica<int> m1(\"datoteka.txt\", false);\n        }\n        catch (const std::logic_error& e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n        catch(...)\n        {\n            std::cout << \"Neispravan tip izuzetka!\";\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Trazena datoteka ne postoji\nIzuzetak: Trazena datoteka ne postoji\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 5\n\/\/ Odgovorni asistent: Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 5, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/AT 2: Testiranje izuzetaka metoda ObnoviIzTekstualneDatoteke i ObnoviIzBinarneDatoteke\n    {\n        try\n        {\n            Matrica<int> m1(2,2);\n            m1.ObnoviIzBinarneDatoteke(\"datoteka.DAT\");\n        }\n        catch (const std::logic_error& e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n        catch(...)\n        {\n            std::cout << \"Neispravan tip izuzetka!\";\n        }\n\n        try\n        {\n            Matrica<int> m1(2,2);\n            m1.ObnoviIzTekstualneDatoteke(\"datoteka.txt\");\n        }\n        catch (const std::logic_error& e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n        catch(...)\n        {\n            std::cout << \"Neispravan tip izuzetka!\";\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Trazena datoteka ne postoji\nIzuzetak: Trazena datoteka ne postoji\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 5\n\/\/ Odgovorni asistent: Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 5, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void kreirajDatotetkuZbii1()\n{\n    std::string ime = \"matrica.txt\";\n    std::ofstream dat(ime);\n    dat << \"1, 2\\n3, 4\";\n    dat.close();\n}\n\nvoid kreirajDatotetkuZbii2()\n{\n    std::string ime = \"matrica.txt\";\n    std::ofstream dat(ime);\n    dat << \"1.4, 2.54\\n3.7, -4.7\";\n    dat.close();\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/AT 3: Testiranje konstruktora za ucitavanje iz tekstualne datoteke\n    {\n        try\n        {\n            kreirajDatotetkuZbii1();\n            Matrica<int> m1(\"matrica.txt\", false);\n            std::cout << std::setw(6) << m1;\n        }\n        catch (const std::logic_error& e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n        catch(...)\n        {\n            std::cout << \"Neispravan tip izuzetka!\";\n        }\n        \n        std::cout << std::endl << std::endl;\n        try\n        {\n            kreirajDatotetkuZbii2();\n            Matrica<double> m1(\"matrica.txt\", false);\n            std::cout << std::setw(6) << m1;\n        }\n        catch (const std::logic_error& e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n        catch(...)\n        {\n            std::cout << \"Neispravan tip izuzetka!\";\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "     1     2\n     3     4\n\n\n   1.4  2.54\n   3.7  -4.7\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 5\n\/\/ Odgovorni asistent: Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 5, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/AT 4: Testiranje konstruktora za ucitavanje iz binarne datoteke\n    {\n\n        try\n        {\n            Matrica<int> m0{2, 2};\n            for (int i{0}; i < 2; i++)\n                for (int j{0}; j < 2; j++)\n                    m0[i][j] = i + j;\n            m0.SacuvajUBinarnuDatoteku(\"matrica1.DAT\");\n            Matrica<int> m1(\"matrica1.DAT\", true);\n            std::cout << std::setw(6) << m1;\n        }\n        catch (const std::logic_error& e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n        catch(...)\n        {\n            std::cout << \"Neispravan tip izuzetka!\";\n        }\n\n        std::cout << std::endl << std::endl;\n\n        try\n        {\n            Matrica<double> m0{2, 2};\n            for (int i{0}; i < 2; i++)\n                for (int j{0}; j < 2; j++)\n                    m0[i][j] = i + j + 0.5;\n            m0.SacuvajUBinarnuDatoteku(\"matrica2.DAT\");\n            Matrica<double> m1(\"matrica2.DAT\", true);\n            std::cout << std::setw(6) << m1;\n        }\n        catch (const std::logic_error& e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n        catch(...)\n        {\n            std::cout << \"Neispravan tip izuzetka!\";\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "     0     1\n     1     2\n\n\n   0.5   1.5\n   1.5   2.5\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

@@ -1,0 +1,140 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Ispit 1, Zadatak 1",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "std::cout<<\"----------------------- AT 1 -----------------------\"<<std::endl;\n    \/\/ AT 1: Test main-a (primjer iz postavke)\n    \/*\n        11\n        5 19 -332 65413 29 788 -6 0 4219 99 -100\n    *\/\n    {\n        _main();\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 2 -----------------------\"<<std::endl;\n    \/\/ AT 2: Test main-a (primjer iz postavke - brojevi pomnozeni sa -1)\n    \/*\n    11\n    -5 -19 332 -65413 -29 -788 6 0 -4219 -99 100\n    *\/\n    {\n        _main();\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 3 -----------------------\"<<std::endl;\n    \/\/ AT 3: Poziv funkcije\n    {\n        std::vector<int> v{ 2, 4, 8, 10, 12, 14, 16 };\n        Razvrstaj(v);\n\n        std::cout << \"OK\";\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 4 -----------------------\"<<std::endl;\n    \/\/ AT 4: Prazan vektor [povratni tip: auto 1\/3]\n    std::cout << std::endl;\n    {\n        std::vector<int> v{ };\n        auto klase = Razvrstaj(v);\n\n        \/\/ Ispis\n        for (int i = 0; i < 10; i++)\n        {\n            std::cout << \"Digitalni korijen \" << i << \": \";\n            for (int e : klase.at(i))\n                std::cout << e << \" \";\n            std::cout << std::endl;\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "11\n5 19 -332 65413 29 788 -6 0 4219 99 -100\n11\n-5 -19 332 -65413 -29 -788 6 0 -4219 -99 100\n"
+                },
+                "expect": [
+                    "----------------------- AT 1 -----------------------\nKoliko ima brojeva: Unesi brojeve: Digitalni korijen 0: 0\nDigitalni korijen 1: 19 65413 -100\nDigitalni korijen 2: 29\nDigitalni korijen 3:\nDigitalni korijen 4:\nDigitalni korijen 5: 5 788\nDigitalni korijen 6: -6\nDigitalni korijen 7: 4219\nDigitalni korijen 8: -332\nDigitalni korijen 9: 99\n\n----------------------- AT 2 -----------------------\nKoliko ima brojeva: Unesi brojeve: Digitalni korijen 0: 0\nDigitalni korijen 1: -19 -65413 100\nDigitalni korijen 2: -29\nDigitalni korijen 3:\nDigitalni korijen 4:\nDigitalni korijen 5: -5 -788\nDigitalni korijen 6: 6\nDigitalni korijen 7: -4219\nDigitalni korijen 8: 332\nDigitalni korijen 9: -99\n\n----------------------- AT 3 -----------------------\nOK\n----------------------- AT 4 -----------------------\n\nDigitalni korijen 0:\nDigitalni korijen 1:\nDigitalni korijen 2:\nDigitalni korijen 3:\nDigitalni korijen 4:\nDigitalni korijen 5:\nDigitalni korijen 6:\nDigitalni korijen 7:\nDigitalni korijen 8:\nDigitalni korijen 9:\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "11\n5 19 -332 65413 29 788 -6 0 4219 99 -100\n11\n-5 -19 332 -65413 -29 -788 6 0 -4219 -99 100\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "11\n5 19 -332 65413 29 788 -6 0 4219 99 -100\n11\n-5 -19 332 -65413 -29 -788 6 0 -4219 -99 100\n"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "std::cout<<\"----------------------- AT 5 -----------------------\"<<std::endl;\n    \/\/ AT 5: Brojevi koji imaju isti digitalni korijen [povratni tip: auto 2\/3]\n    std::cout << std::endl;\n    {\n        std::vector<int> v{ 1, 10, 100, 1000, 10000, 100000 };\n        auto klase = Razvrstaj(v);\n\n        \/\/ Ispis\n        for (int i = 0; i < 10; i++)\n        {\n            std::cout << \"Digitalni korijen \" << i << \": \";\n            for (int e : klase.at(i))\n                std::cout << e << \" \";\n            std::cout << std::endl;\n        }\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 6 -----------------------\"<<std::endl;\n    \/\/ AT 6: Vektor nula [povratni tip: auto 3\/3]\n    std::cout << std::endl;\n    {\n        std::vector<int> v(50, 0);\n        auto klase = Razvrstaj(v);\n\n        \/\/ Ispis\n        for (int i = 0; i < 10; i++)\n        {\n            std::cout << \"Digitalni korijen \" << i << \": \";\n            for (int e : klase.at(i))\n                std::cout << e << \" \";\n            std::cout << std::endl;\n        }\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 7 -----------------------\"<<std::endl;\n    \/\/ AT 7: Brojevi od 0 do 9 [povratni tip: std::array<std::vector<int>, 10> 1\/6]\n    std::cout << std::endl;\n    {\n        std::vector<int> v{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };\n        std::array<std::vector<int>, 10>  klase = Razvrstaj(v);\n\n        \/\/ Ispis\n        for (int i = 0; i < 10; i++)\n        {\n            std::cout << \"Digitalni korijen \" << i << \": \";\n            for (int e : klase.at(i))\n                std::cout << e << \" \";\n            std::cout << std::endl;\n        }\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 8 -----------------------\"<<std::endl;\n    \/\/ AT 8: Svi negativni elementi [povratni tip: std::array<std::vector<int>, 10> 2\/6]\n    std::cout << std::endl;\n    {\n        std::vector<int> v{ -254, -356, -879, -1245, -23564, -89726, -12544 };\n        std::array<std::vector<int>, 10> klase = Razvrstaj(v);\n\n        \/\/ Ispis\n        for (int i = 0; i < 10; i++)\n        {\n            std::cout << \"Digitalni korijen \" << i << \": \";\n            for (int e : klase.at(i))\n                std::cout << e << \" \";\n            std::cout << std::endl;\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "----------------------- AT 5 -----------------------\n\nDigitalni korijen 0:\nDigitalni korijen 1: 1 10 100 1000 10000 100000\nDigitalni korijen 2:\nDigitalni korijen 3:\nDigitalni korijen 4:\nDigitalni korijen 5:\nDigitalni korijen 6:\nDigitalni korijen 7:\nDigitalni korijen 8:\nDigitalni korijen 9:\n\n----------------------- AT 6 -----------------------\n\nDigitalni korijen 0: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\nDigitalni korijen 1:\nDigitalni korijen 2:\nDigitalni korijen 3:\nDigitalni korijen 4:\nDigitalni korijen 5:\nDigitalni korijen 6:\nDigitalni korijen 7:\nDigitalni korijen 8:\nDigitalni korijen 9:\n\n----------------------- AT 7 -----------------------\n\nDigitalni korijen 0: 0\nDigitalni korijen 1: 1\nDigitalni korijen 2: 2\nDigitalni korijen 3: 3\nDigitalni korijen 4: 4\nDigitalni korijen 5: 5\nDigitalni korijen 6: 6\nDigitalni korijen 7: 7\nDigitalni korijen 8: 8\nDigitalni korijen 9: 9\n\n----------------------- AT 8 -----------------------\n\nDigitalni korijen 0:\nDigitalni korijen 1:\nDigitalni korijen 2: -254 -23564\nDigitalni korijen 3: -1245\nDigitalni korijen 4:\nDigitalni korijen 5: -356 -89726\nDigitalni korijen 6: -879\nDigitalni korijen 7: -12544\nDigitalni korijen 8:\nDigitalni korijen 9:\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "#include <limits>",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout<<\"----------------------- AT 9 -----------------------\"<<std::endl;\n    \/\/ AT 9: Alternirajuci niz [povratni tip: std::array<std::vector<int>, 10> 3\/6]\n    std::cout << std::endl;\n    {\n        std::vector<int> v{ 124, -578, 639, -1254, 9655, -145 };\n        std::array<std::vector<int>, 10> klase = Razvrstaj(v);\n\n        \/\/ Ispis\n        for (int i = 0; i < 10; i++)\n        {\n            std::cout << \"Digitalni korijen \" << i << \": \";\n            for (int e : klase.at(i))\n                std::cout << e << \" \";\n            std::cout << std::endl;\n        }\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 10 -----------------------\"<<std::endl;\n    \/\/ AT 10: Brojevi od -9 do 9 [povratni tip: std::array<std::vector<int>, 10> 4\/6]\n    std::cout << std::endl;\n    {\n        std::vector<int> v;\n        for (int i = -9; i < 10; ++i)\n            v.push_back(i);\n        std::array<std::vector<int>, 10> klase = Razvrstaj(v);\n\n        \/\/ Ispis\n        for (int i = 0; i < 10; i++)\n        {\n            std::cout << \"Digitalni korijen \" << i << \": \";\n            for (int e : klase.at(i))\n                std::cout << e << \" \";\n            std::cout << std::endl;\n        }\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 11 -----------------------\"<<std::endl;\n    \/\/ AT 11: Test std::numeric_limits<int>::max() [povratni tip: std::array<std::vector<int>, 10> 5\/6]\n    std::cout << std::endl;\n    {\n        std::vector<int> v{ std::numeric_limits<int>::max() };\n        std::array<std::vector<int>, 10> klase = Razvrstaj(v);\n\n        \/\/ Ispis\n        for (int i = 0; i < 10; i++)\n        {\n            std::cout << \"Digitalni korijen \" << i << \": \";\n            for (int e : klase.at(i))\n                std::cout << e << \" \";\n            std::cout << std::endl;\n        }\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 12 -----------------------\"<<std::endl;\n    \/\/ AT 12: Test std::numeric_limits<int>::min() [povratni tip: std::array<std::vector<int>, 10> 6\/6]\n    std::cout << std::endl;\n    {\n        std::vector<int> v{ std::numeric_limits<int>::min() };\n        std::array<std::vector<int>, 10> klase = Razvrstaj(v);\n\n        \/\/ Ispis\n        for (int i = 0; i < 10; i++)\n        {\n            std::cout << \"Digitalni korijen \" << i << \": \";\n            for (int e : klase.at(i))\n                std::cout << e << \" \";\n            std::cout << std::endl;\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "----------------------- AT 9 -----------------------\n\nDigitalni korijen 0:\nDigitalni korijen 1: -145\nDigitalni korijen 2: -578\nDigitalni korijen 3: -1254\nDigitalni korijen 4:\nDigitalni korijen 5:\nDigitalni korijen 6:\nDigitalni korijen 7: 124 9655\nDigitalni korijen 8:\nDigitalni korijen 9: 639\n\n----------------------- AT 10 -----------------------\n\nDigitalni korijen 0: 0\nDigitalni korijen 1: -1 1\nDigitalni korijen 2: -2 2\nDigitalni korijen 3: -3 3\nDigitalni korijen 4: -4 4\nDigitalni korijen 5: -5 5\nDigitalni korijen 6: -6 6\nDigitalni korijen 7: -7 7\nDigitalni korijen 8: -8 8\nDigitalni korijen 9: -9 9\n\n----------------------- AT 11 -----------------------\n\nDigitalni korijen 0:\nDigitalni korijen 1: 2147483647\nDigitalni korijen 2:\nDigitalni korijen 3:\nDigitalni korijen 4:\nDigitalni korijen 5:\nDigitalni korijen 6:\nDigitalni korijen 7:\nDigitalni korijen 8:\nDigitalni korijen 9:\n\n----------------------- AT 12 -----------------------\n\nDigitalni korijen 0:\nDigitalni korijen 1:\nDigitalni korijen 2: -2147483648\nDigitalni korijen 3:\nDigitalni korijen 4:\nDigitalni korijen 5:\nDigitalni korijen 6:\nDigitalni korijen 7:\nDigitalni korijen 8:\nDigitalni korijen 9:\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

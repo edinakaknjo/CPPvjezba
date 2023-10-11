@@ -1,0 +1,75 @@
+{
+    "buildhost_description": {
+        "id": "lab002-c01",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n"
+    },
+    "tools": {
+        "compile": "g++ (GCC) 6.2.0",
+        "compile[debug]": "g++ (GCC) 6.2.0",
+        "debug": "GNU gdb (GDB) Red Hat Enterprise Linux (7.2-92.el6)",
+        "profile[memcheck]": "valgrind-3.8.1",
+        "profile[sgcheck]": "valgrind-3.8.1"
+    },
+    "status": 4,
+    "test_results": {
+        "3569": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:12:1: error: ‘Vektor3d’ was not declared in this scope\n Vektor3d v1, v2;\n ^~~~~~~~\nmain.cpp:13:1: error: ‘v1’ was not declared in this scope\n v1.Postavi(3, 4, 2); v2.Postavi(2, 0, 5);\n ^~\nmain.cpp:13:22: error: ‘v2’ was not declared in this scope\n v1.Postavi(3, 4, 2); v2.Postavi(2, 0, 5);\n                      ^~\nmain.cpp:26:7: error: ‘Vektor3d’ does not name a type\n const Vektor3d v3(v1);\n       ^~~~~~~~\nmain.cpp:27:1: error: ‘v3’ was not declared in this scope\n v3.Ispisi();\n ^~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "1",
+                            "message": "'Vektor3d' was not declared in this scope",
+                            "code": "Vektor3d v1, v2;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "1",
+                            "message": "'v1' was not declared in this scope",
+                            "code": "v1.Postavi(3, 4, 2); v2.Postavi(2, 0, 5);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "22",
+                            "message": "'v2' was not declared in this scope",
+                            "code": "v1.Postavi(3, 4, 2); v2.Postavi(2, 0, 5);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 20,
+                            "col": "7",
+                            "message": "'Vektor3d' does not name a type",
+                            "code": "const Vektor3d v3(v1);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 21,
+                            "col": "1",
+                            "message": "'v3' was not declared in this scope",
+                            "code": "v3.Ispisi();"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "time": 1621546172
+}

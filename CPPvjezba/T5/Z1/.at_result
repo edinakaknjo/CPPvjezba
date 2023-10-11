@@ -1,0 +1,372 @@
+{
+    "buildhost_description": {
+        "id": "lab002-c28",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n"
+    },
+    "tools": {
+        "compile": "g++ (GCC) 6.2.0",
+        "compile[debug]": "g++ (GCC) 6.2.0",
+        "debug": "GNU gdb (GDB) Red Hat Enterprise Linux (7.2-92.el6)",
+        "profile[memcheck]": "valgrind-3.8.1",
+        "profile[sgcheck]": "valgrind-3.8.1"
+    },
+    "status": 4,
+    "test_results": {
+        "3311": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "parse": {
+                    "success": true,
+                    "symbols": {
+                        "main.cpp": [
+                            {
+                                "name": "main",
+                                "pos": 635
+                            }
+                        ]
+                    }
+                },
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite recenicu: Recenica bez prve rijeci glasi: vrh brda vrba mrda...\n_",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==24891== Memcheck, a memory error detector\n==24891== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==24891== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==24891== Command: outputeFgikK\n==24891==\n====START_TEST_7764====Unesite recenicu: Recenica bez prve rijeci glasi: vrh brda vrba mrda...\n_====END_TEST_7764======24891==\n==24891== HEAP SUMMARY:\n==24891==     in use at exit: 72,704 bytes in 1 blocks\n==24891==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==24891==\n==24891== LEAK SUMMARY:\n==24891==    definitely lost: 0 bytes in 0 blocks\n==24891==    indirectly lost: 0 bytes in 0 blocks\n==24891==      possibly lost: 0 bytes in 0 blocks\n==24891==    still reachable: 72,704 bytes in 1 blocks\n==24891==         suppressed: 0 bytes in 0 blocks\n==24891== Rerun with --leak-check=full to see details of leaked memory\n==24891==\n==24891== For counts of detected and suppressed errors, rerun with: -v\n==24891== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==24894== Memcheck, a memory error detector\n==24894== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==24894== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==24894== Command: outputeFgikK\n==24894==\n====START_TEST_7764====Unesite recenicu: Recenica bez prve rijeci glasi: vrh brda vrba mrda...\n_====END_TEST_7764======24894==\n==24894== HEAP SUMMARY:\n==24894==     in use at exit: 72,704 bytes in 1 blocks\n==24894==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==24894==\n==24894== LEAK SUMMARY:\n==24894==    definitely lost: 0 bytes in 0 blocks\n==24894==    indirectly lost: 0 bytes in 0 blocks\n==24894==      possibly lost: 0 bytes in 0 blocks\n==24894==    still reachable: 72,704 bytes in 1 blocks\n==24894==         suppressed: 0 bytes in 0 blocks\n==24894== Rerun with --leak-check=full to see details of leaked memory\n==24894==\n==24894== For counts of detected and suppressed errors, rerun with: -v\n==24894== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3312": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite recenicu: Recenica bez prve rijeci glasi:",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==24914== Memcheck, a memory error detector\n==24914== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==24914== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==24914== Command: outputpjKBkR\n==24914==\n====START_TEST_3825====Unesite recenicu: Recenica bez prve rijeci glasi:\n====END_TEST_3825======24914==\n==24914== HEAP SUMMARY:\n==24914==     in use at exit: 72,704 bytes in 1 blocks\n==24914==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==24914==\n==24914== LEAK SUMMARY:\n==24914==    definitely lost: 0 bytes in 0 blocks\n==24914==    indirectly lost: 0 bytes in 0 blocks\n==24914==      possibly lost: 0 bytes in 0 blocks\n==24914==    still reachable: 72,704 bytes in 1 blocks\n==24914==         suppressed: 0 bytes in 0 blocks\n==24914== Rerun with --leak-check=full to see details of leaked memory\n==24914==\n==24914== For counts of detected and suppressed errors, rerun with: -v\n==24914== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==24917== Memcheck, a memory error detector\n==24917== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==24917== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==24917== Command: outputpjKBkR\n==24917==\n====START_TEST_3825====Unesite recenicu: Recenica bez prve rijeci glasi:\n====END_TEST_3825======24917==\n==24917== HEAP SUMMARY:\n==24917==     in use at exit: 72,704 bytes in 1 blocks\n==24917==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==24917==\n==24917== LEAK SUMMARY:\n==24917==    definitely lost: 0 bytes in 0 blocks\n==24917==    indirectly lost: 0 bytes in 0 blocks\n==24917==      possibly lost: 0 bytes in 0 blocks\n==24917==    still reachable: 72,704 bytes in 1 blocks\n==24917==         suppressed: 0 bytes in 0 blocks\n==24917== Rerun with --leak-check=full to see details of leaked memory\n==24917==\n==24917== For counts of detected and suppressed errors, rerun with: -v\n==24917== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3313": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite recenicu: Recenica bez prve rijeci glasi:",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==24937== Memcheck, a memory error detector\n==24937== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==24937== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==24937== Command: outputWIuip3\n==24937==\n====START_TEST_9912====Unesite recenicu: Recenica bez prve rijeci glasi:\n====END_TEST_9912======24937==\n==24937== HEAP SUMMARY:\n==24937==     in use at exit: 72,704 bytes in 1 blocks\n==24937==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==24937==\n==24937== LEAK SUMMARY:\n==24937==    definitely lost: 0 bytes in 0 blocks\n==24937==    indirectly lost: 0 bytes in 0 blocks\n==24937==      possibly lost: 0 bytes in 0 blocks\n==24937==    still reachable: 72,704 bytes in 1 blocks\n==24937==         suppressed: 0 bytes in 0 blocks\n==24937== Rerun with --leak-check=full to see details of leaked memory\n==24937==\n==24937== For counts of detected and suppressed errors, rerun with: -v\n==24937== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==24940== Memcheck, a memory error detector\n==24940== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==24940== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==24940== Command: outputWIuip3\n==24940==\n====START_TEST_9912====Unesite recenicu: Recenica bez prve rijeci glasi:\n====END_TEST_9912======24940==\n==24940== HEAP SUMMARY:\n==24940==     in use at exit: 72,704 bytes in 1 blocks\n==24940==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==24940==\n==24940== LEAK SUMMARY:\n==24940==    definitely lost: 0 bytes in 0 blocks\n==24940==    indirectly lost: 0 bytes in 0 blocks\n==24940==      possibly lost: 0 bytes in 0 blocks\n==24940==    still reachable: 72,704 bytes in 1 blocks\n==24940==         suppressed: 0 bytes in 0 blocks\n==24940== Rerun with --leak-check=full to see details of leaked memory\n==24940==\n==24940== For counts of detected and suppressed errors, rerun with: -v\n==24940== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3314": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite recenicu: Recenica bez prve rijeci glasi: vrh brda vrba mrda...",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==24960== Memcheck, a memory error detector\n==24960== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==24960== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==24960== Command: outputy1kjwk\n==24960==\n====START_TEST_3478====Unesite recenicu: Recenica bez prve rijeci glasi: vrh brda vrba mrda...\n====END_TEST_3478======24960==\n==24960== HEAP SUMMARY:\n==24960==     in use at exit: 72,704 bytes in 1 blocks\n==24960==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==24960==\n==24960== LEAK SUMMARY:\n==24960==    definitely lost: 0 bytes in 0 blocks\n==24960==    indirectly lost: 0 bytes in 0 blocks\n==24960==      possibly lost: 0 bytes in 0 blocks\n==24960==    still reachable: 72,704 bytes in 1 blocks\n==24960==         suppressed: 0 bytes in 0 blocks\n==24960== Rerun with --leak-check=full to see details of leaked memory\n==24960==\n==24960== For counts of detected and suppressed errors, rerun with: -v\n==24960== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==24963== Memcheck, a memory error detector\n==24963== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==24963== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==24963== Command: outputy1kjwk\n==24963==\n====START_TEST_3478====Unesite recenicu: Recenica bez prve rijeci glasi: vrh brda vrba mrda...\n====END_TEST_3478======24963==\n==24963== HEAP SUMMARY:\n==24963==     in use at exit: 72,704 bytes in 1 blocks\n==24963==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==24963==\n==24963== LEAK SUMMARY:\n==24963==    definitely lost: 0 bytes in 0 blocks\n==24963==    indirectly lost: 0 bytes in 0 blocks\n==24963==      possibly lost: 0 bytes in 0 blocks\n==24963==    still reachable: 72,704 bytes in 1 blocks\n==24963==         suppressed: 0 bytes in 0 blocks\n==24963== Rerun with --leak-check=full to see details of leaked memory\n==24963==\n==24963== For counts of detected and suppressed errors, rerun with: -v\n==24963== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3315": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite recenicu: Recenica bez prve rijeci glasi:",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==24985== Memcheck, a memory error detector\n==24985== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==24985== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==24985== Command: outputC83mGG\n==24985==\n====START_TEST_9107====Unesite recenicu: Recenica bez prve rijeci glasi:\n====END_TEST_9107======24985==\n==24985== HEAP SUMMARY:\n==24985==     in use at exit: 72,704 bytes in 1 blocks\n==24985==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==24985==\n==24985== LEAK SUMMARY:\n==24985==    definitely lost: 0 bytes in 0 blocks\n==24985==    indirectly lost: 0 bytes in 0 blocks\n==24985==      possibly lost: 0 bytes in 0 blocks\n==24985==    still reachable: 72,704 bytes in 1 blocks\n==24985==         suppressed: 0 bytes in 0 blocks\n==24985== Rerun with --leak-check=full to see details of leaked memory\n==24985==\n==24985== For counts of detected and suppressed errors, rerun with: -v\n==24985== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==24988== Memcheck, a memory error detector\n==24988== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==24988== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==24988== Command: outputC83mGG\n==24988==\n====START_TEST_9107====Unesite recenicu: Recenica bez prve rijeci glasi:\n====END_TEST_9107======24988==\n==24988== HEAP SUMMARY:\n==24988==     in use at exit: 72,704 bytes in 1 blocks\n==24988==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==24988==\n==24988== LEAK SUMMARY:\n==24988==    definitely lost: 0 bytes in 0 blocks\n==24988==    indirectly lost: 0 bytes in 0 blocks\n==24988==      possibly lost: 0 bytes in 0 blocks\n==24988==    still reachable: 72,704 bytes in 1 blocks\n==24988==         suppressed: 0 bytes in 0 blocks\n==24988== Rerun with --leak-check=full to see details of leaked memory\n==24988==\n==24988== For counts of detected and suppressed errors, rerun with: -v\n==24988== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3316": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite recenicu: Recenica bez prve rijeci glasi:",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==25008== Memcheck, a memory error detector\n==25008== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==25008== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==25008== Command: outpute2RKU7\n==25008==\n====START_TEST_9058====Unesite recenicu: Recenica bez prve rijeci glasi:\n====END_TEST_9058======25008==\n==25008== HEAP SUMMARY:\n==25008==     in use at exit: 72,704 bytes in 1 blocks\n==25008==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==25008==\n==25008== LEAK SUMMARY:\n==25008==    definitely lost: 0 bytes in 0 blocks\n==25008==    indirectly lost: 0 bytes in 0 blocks\n==25008==      possibly lost: 0 bytes in 0 blocks\n==25008==    still reachable: 72,704 bytes in 1 blocks\n==25008==         suppressed: 0 bytes in 0 blocks\n==25008== Rerun with --leak-check=full to see details of leaked memory\n==25008==\n==25008== For counts of detected and suppressed errors, rerun with: -v\n==25008== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==25011== Memcheck, a memory error detector\n==25011== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==25011== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==25011== Command: outpute2RKU7\n==25011==\n====START_TEST_9058====Unesite recenicu: Recenica bez prve rijeci glasi:\n====END_TEST_9058======25011==\n==25011== HEAP SUMMARY:\n==25011==     in use at exit: 72,704 bytes in 1 blocks\n==25011==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==25011==\n==25011== LEAK SUMMARY:\n==25011==    definitely lost: 0 bytes in 0 blocks\n==25011==    indirectly lost: 0 bytes in 0 blocks\n==25011==      possibly lost: 0 bytes in 0 blocks\n==25011==    still reachable: 72,704 bytes in 1 blocks\n==25011==         suppressed: 0 bytes in 0 blocks\n==25011== Rerun with --leak-check=full to see details of leaked memory\n==25011==\n==25011== For counts of detected and suppressed errors, rerun with: -v\n==25011== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3317": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite recenicu: Recenica bez prve rijeci glasi: recenica je jako duga, i koristi samo u svrhu testiranja unosa dugih recenica te stoga nema nikakvog drugog smisla.",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==25031== Memcheck, a memory error detector\n==25031== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==25031== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==25031== Command: outputWlgAdE\n==25031==\n====START_TEST_3963====Unesite recenicu: Recenica bez prve rijeci glasi: recenica je jako duga, i koristi samo u svrhu testiranja unosa dugih recenica te stoga nema nikakvog drugog smisla.\n====END_TEST_3963======25031==\n==25031== HEAP SUMMARY:\n==25031==     in use at exit: 72,704 bytes in 1 blocks\n==25031==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==25031==\n==25031== LEAK SUMMARY:\n==25031==    definitely lost: 0 bytes in 0 blocks\n==25031==    indirectly lost: 0 bytes in 0 blocks\n==25031==      possibly lost: 0 bytes in 0 blocks\n==25031==    still reachable: 72,704 bytes in 1 blocks\n==25031==         suppressed: 0 bytes in 0 blocks\n==25031== Rerun with --leak-check=full to see details of leaked memory\n==25031==\n==25031== For counts of detected and suppressed errors, rerun with: -v\n==25031== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==25034== Memcheck, a memory error detector\n==25034== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==25034== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==25034== Command: outputWlgAdE\n==25034==\n====START_TEST_3963====Unesite recenicu: Recenica bez prve rijeci glasi: recenica je jako duga, i koristi samo u svrhu testiranja unosa dugih recenica te stoga nema nikakvog drugog smisla.\n====END_TEST_3963======25034==\n==25034== HEAP SUMMARY:\n==25034==     in use at exit: 72,704 bytes in 1 blocks\n==25034==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==25034==\n==25034== LEAK SUMMARY:\n==25034==    definitely lost: 0 bytes in 0 blocks\n==25034==    indirectly lost: 0 bytes in 0 blocks\n==25034==      possibly lost: 0 bytes in 0 blocks\n==25034==    still reachable: 72,704 bytes in 1 blocks\n==25034==         suppressed: 0 bytes in 0 blocks\n==25034== Rerun with --leak-check=full to see details of leaked memory\n==25034==\n==25034== For counts of detected and suppressed errors, rerun with: -v\n==25034== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3318": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite recenicu: Recenica bez prve rijeci glasi:",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==25054== Memcheck, a memory error detector\n==25054== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==25054== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==25054== Command: outputrDD0zf\n==25054==\n====START_TEST_2459====Unesite recenicu: Recenica bez prve rijeci glasi:\n====END_TEST_2459======25054==\n==25054== HEAP SUMMARY:\n==25054==     in use at exit: 72,704 bytes in 1 blocks\n==25054==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==25054==\n==25054== LEAK SUMMARY:\n==25054==    definitely lost: 0 bytes in 0 blocks\n==25054==    indirectly lost: 0 bytes in 0 blocks\n==25054==      possibly lost: 0 bytes in 0 blocks\n==25054==    still reachable: 72,704 bytes in 1 blocks\n==25054==         suppressed: 0 bytes in 0 blocks\n==25054== Rerun with --leak-check=full to see details of leaked memory\n==25054==\n==25054== For counts of detected and suppressed errors, rerun with: -v\n==25054== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==25057== Memcheck, a memory error detector\n==25057== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==25057== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==25057== Command: outputrDD0zf\n==25057==\n====START_TEST_2459====Unesite recenicu: Recenica bez prve rijeci glasi:\n====END_TEST_2459======25057==\n==25057== HEAP SUMMARY:\n==25057==     in use at exit: 72,704 bytes in 1 blocks\n==25057==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==25057==\n==25057== LEAK SUMMARY:\n==25057==    definitely lost: 0 bytes in 0 blocks\n==25057==    indirectly lost: 0 bytes in 0 blocks\n==25057==      possibly lost: 0 bytes in 0 blocks\n==25057==    still reachable: 72,704 bytes in 1 blocks\n==25057==         suppressed: 0 bytes in 0 blocks\n==25057== Rerun with --leak-check=full to see details of leaked memory\n==25057==\n==25057== For counts of detected and suppressed errors, rerun with: -v\n==25057== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1617735633
+}

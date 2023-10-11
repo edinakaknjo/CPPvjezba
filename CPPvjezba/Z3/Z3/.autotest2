@@ -1,0 +1,281 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 3, Zadatak 3",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/eventualne gre\u0161ke u testovima javiti na kerim.hodzic@etf.unsa.ba\n\/\/testiranje izuzetka - matrica nije kvadratna\n\nMatrica<double> a, b, c;\n  int m=3, n=4;\n\n  try {\n    a = StvoriMatricu<double>(m, n);\n    MatricniEksponencijalniPolinom(a,10);\n  }\n  catch(std::domain_error e) {\n    std::cout << e.what();\n  }\n  UnistiMatricu(a); UnistiMatricu(b); UnistiMatricu(c);"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Matrica nije kvadratna"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/eventualne gre\u0161ke u testovima javiti na kerim.hodzic@etf.unsa.ba\n\/\/testiranje izuzetka - matrice nisu saglasne za mno\u017eenje  \nMatrica<int> m1(StvoriMatricu<int>(3,2)), m2(StvoriMatricu<int>(4,2)), m3;\n  try {\n    m3 = ProduktMatrica(m1, m2);\n    IspisiMatricu(m3, 4);\n  }\n  catch (std::domain_error)\n  {\n    std::cout << \"Matrice nisu saglasne za mnozenje\";\n  }\n  UnistiMatricu(m1); UnistiMatricu(m2);"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Matrice nisu saglasne za mnozenje"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/eventualne gre\u0161ke u testovima javiti na kerim.hodzic@etf.unsa.ba\n\/\/testiranje main-a\n_main();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2 2\n2 2\n10\n1\n2\n3\n4\n5\n6\n7\n8\n"
+                },
+                "expect": [
+                    "Unesi broj redova i kolona za matricu A:\nUnesi broj redova i kolona za matricu B:\nUnesite broj n:\nUnesi matricu A:\nA(0,0) =\nA(0,1) =\nA(1,0) =\nA(1,1) =\nUnesi matricu B:\nB(0,0) =\nB(0,1) =\nB(1,0) =\nB(1,1) =\nProdukt ove dvije matrice je:\n        19        22\n        43        50\nEksponencijalni polinom matrice A je:\n   50.8477   73.1025\n   109.654   160.501"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2 2\n2 2\n10\n1\n2\n3\n4\n5\n6\n7\n8\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2 2\n2 2\n10\n1\n2\n3\n4\n5\n6\n7\n8\n"
+                }
+            }
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/eventualne gre\u0161ke u testovima javiti na kerim.hodzic@etf.unsa.ba\n\/\/testiranje izuzetka - neispravan red\nMatrica<double> a;\n  int m=4, n=4;\n\n  try {\n    a = StvoriMatricu<double>(m, n);\n    MatricniEksponencijalniPolinom(a,-3);\n  }\n  catch(std::domain_error e) {\n    std::cout << e.what();\n  }\n  UnistiMatricu(a); "
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Neispravan red"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/eventualne gre\u0161ke u testovima javiti na kerim.hodzic@etf.unsa.ba\n\/\/3 matrice, ispis, produkt  \nMatrica<int> m1(StvoriMatricu<int>(3,4)), m2(StvoriMatricu<int>(4,2)), m3;\n  m1.elementi[0][0] = 2;\n  m1.elementi[0][1] = 4;\n  m1.elementi[0][2] = 3;\n  m1.elementi[0][3] = 7;\n  m1.elementi[1][0] = 1;\n  m1.elementi[1][1] = 7;\n  m1.elementi[1][2] = -3;\n  m1.elementi[1][3] = 8;\n  m1.elementi[2][0] = 9;\n  m1.elementi[2][1] = 14;\n  m1.elementi[2][2] = -13;\n  m1.elementi[2][3] = 0;\n  m2.elementi[0][0] = 78;\n  m2.elementi[0][1] = 1;\n  m2.elementi[1][0] = 35;\n  m2.elementi[1][1] = 13;\n  m2.elementi[2][0] = 0;\n  m2.elementi[2][1] = -7;\n  m2.elementi[3][0] = 4;\n  m2.elementi[3][1] = 3;\n  m3 = ProduktMatrica(m1, m2); IspisiMatricu(m3, 4);\n  UnistiMatricu(m1); UnistiMatricu(m2); UnistiMatricu(m3);"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    " 324  54\n 355 137\n1192 282"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 7,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/eventualne gre\u0161ke u testovima javiti na kerim.hodzic@etf.unsa.ba\n\/\/matrica, ispis\n  Matrica<int> m1(StvoriMatricu<int>(3,3));\n  m1.elementi[0][0] = 2;\n  m1.elementi[0][1] = 4;\n  m1.elementi[0][2] = 3;\n  m1.elementi[1][0] = 1;\n  m1.elementi[1][1] = 7;\n  m1.elementi[1][2] = -3;\n  m1.elementi[2][0] = 9;\n  m1.elementi[2][1] = 14;\n  m1.elementi[2][2] = -13;\n  IspisiMatricu(m1, 3, 0, true);"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "  2  4  3\n  1  7 -3\n  9 14-13"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 8,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": " Matrica<double> m1(StvoriMatricu<double>(2,2)), m2;\n  m1.elementi[0][0] = 1;\n  m1.elementi[0][1] = 2;\n  m1.elementi[1][0] = 3;\n  m1.elementi[1][1] = 4;\n\n  m2 =  MatricniEksponencijalniPolinom(m1,10);\n  IspisiMatricu(m2,8);\n  UnistiMatricu(m1); UnistiMatricu(m2);"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    " 50.8477 73.1025\n 109.654 160.501"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 9,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "Matrica<int> m1(StvoriMatricu<int>(2,2));\n  m1.elementi[0][0] = -1;\n  m1.elementi[0][1] = 0;\n  m1.elementi[1][0] = 0;\n  m1.elementi[1][1] = -1;\n  IspisiMatricu(MatricniEksponencijalniPolinom(m1,1),2,7,true);\nUnistiMatricu(m1);"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    " 0 0\n 0 0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 10,
+            "name": "Test 10",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "Matrica<double> m1(StvoriMatricu<double>(3,3));\nm1.elementi[0][0] = 1;\nm1.elementi[0][1] = 1;\nm1.elementi[0][2] = 1;\nm1.elementi[1][0] = 1;\nm1.elementi[1][1] = 1;\nm1.elementi[1][2] = 1;\nm1.elementi[2][0] = 1;\nm1.elementi[2][1] = 1;\nm1.elementi[2][2] = 1;\nIspisiMatricu(MatricniEksponencijalniPolinom(m1,4),2,1,true);\nUnistiMatricu(m1);"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    " 6 5 5\n 5 6 5\n 5 5 6"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 11,
+            "name": "Test 11",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "Matrica<int> m1(StvoriMatricu<int>(3,3));\nm1.elementi[0][0] = -1;\nm1.elementi[0][1] = 0;\nm1.elementi[0][2] = 0;\nm1.elementi[1][0] = 0;\nm1.elementi[1][1] = -1;\nm1.elementi[1][2] = 0;\nm1.elementi[2][0] = 0;\nm1.elementi[2][1] = 0;\nm1.elementi[2][2] = -1;\nIspisiMatricu(MatricniEksponencijalniPolinom(m1,1),2,7,true);\nUnistiMatricu(m1);"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    " 0 0 0\n 0 0 0\n 0 0 0"
+                ],
+                "environment": []
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "0 0 0\\n 0 0 0\\n 0 0 0"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "0 0 0\\n 0 0 0\\n 0 0 0"
+                }
+            }
+        }
+    ]
+}

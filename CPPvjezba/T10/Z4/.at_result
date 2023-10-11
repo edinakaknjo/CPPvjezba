@@ -1,0 +1,56 @@
+{
+    "buildhost_description": {
+        "id": "lab002-c01",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n"
+    },
+    "tools": {
+        "compile": "g++ (GCC) 6.2.0",
+        "compile[debug]": "g++ (GCC) 6.2.0",
+        "debug": "GNU gdb (GDB) Red Hat Enterprise Linux (7.2-92.el6)",
+        "profile[memcheck]": "valgrind-3.8.1",
+        "profile[sgcheck]": "valgrind-3.8.1"
+    },
+    "status": 4,
+    "test_results": {
+        "1": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "compile": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In member function ‘Ugao& Ugao::SaberiSa(const Ugao&)’:\nmain.cpp:85:1: warning: no return statement in function returning non-void [-Wreturn-type]\n }\n ^\nmain.cpp: In member function ‘Ugao& Ugao::PomnoziSa(double)’:\nmain.cpp:88:10: error: no matching function for call to ‘Ugao::Ugao()’\n     Ugao rad;\n          ^~~\nmain.cpp:32:6: note: candidate: Ugao::Ugao(int, int, int)\n      Ugao(int step, int min, int sek){\n      ^~~~\nmain.cpp:32:6: note:   candidate expects 3 arguments, 0 provided\nmain.cpp:21:5: note: candidate: Ugao::Ugao(double)\n     Ugao(double radijani){\n     ^~~~\nmain.cpp:21:5: note:   candidate expects 1 argument, 0 provided\nmain.cpp:9:7: note: candidate: constexpr Ugao::Ugao(const Ugao&)\n class Ugao{\n       ^~~~\nmain.cpp:9:7: note:   candidate expects 1 argument, 0 provided\nmain.cpp:9:7: note: candidate: constexpr Ugao::Ugao(Ugao&&)\nmain.cpp:9:7: note:   candidate expects 1 argument, 0 provided\nmain.cpp:91:1: warning: no return statement in function returning non-void [-Wreturn-type]\n }\n ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": "85",
+                            "col": "1",
+                            "message": "no return statement in function returning non-void",
+                            "code": "}"
+                        },
+                        {
+                            "type": "error",
+                            "file": "main.cpp",
+                            "line": "88",
+                            "col": "10",
+                            "message": "no matching function for call to 'Ugao::Ugao()'",
+                            "code": "Ugao rad;"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": "91",
+                            "col": "1",
+                            "message": "no return statement in function returning non-void",
+                            "code": "}"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "time": 1622150987
+}

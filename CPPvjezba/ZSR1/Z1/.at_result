@@ -1,0 +1,31 @@
+{
+    "buildhost_description": {
+        "id": "lab002-c01",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n"
+    },
+    "tools": {
+        "compile": "g++ (GCC) 6.2.0",
+        "compile[debug]": "g++ (GCC) 6.2.0",
+        "debug": "GNU gdb (GDB) Red Hat Enterprise Linux (7.2-92.el6)",
+        "profile[memcheck]": "valgrind-3.8.1",
+        "profile[sgcheck]": "valgrind-3.8.1"
+    },
+    "status": 4,
+    "test_results": {
+        "1": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "compile": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "/tmp/ccf1fcwO.o: In function `main':\nmain.cpp:(.text+0x0): multiple definition of `main'\n/tmp/cczogTcz.o:main%20%281%29.cpp:(.text+0x0): first defined here\ncollect2: error: ld returned 1 exit status",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1619276732
+}

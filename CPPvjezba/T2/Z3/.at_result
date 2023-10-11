@@ -1,0 +1,146 @@
+{
+    "buildhost_description": {
+        "id": "lab002-c05",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n"
+    },
+    "tools": {
+        "compile": "g++ (GCC) 4.8.2",
+        "compile[debug]": "g++ (GCC) 4.8.2",
+        "debug": "GNU gdb (GDB) Red Hat Enterprise Linux (7.2-92.el6)",
+        "profile[memcheck]": "valgrind-3.8.1",
+        "profile[sgcheck]": "valgrind-3.8.1"
+    },
+    "status": 4,
+    "test_results": {
+        "3161": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite broj elemenata: \nZ_1 = Z_2 = Z_3 = \nParalelna veza ovih elemenata ima impedansu Z_ = (2.51479,0.897637).",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==9657== Memcheck, a memory error detector\n==9657== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==9657== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==9657== Command: outputeuZb9U\n==9657==\n====START_TEST_8855====Unesite broj elemenata:\nZ_1 = Z_2 = Z_3 =\nParalelna veza ovih elemenata ima impedansu Z_ = (2.51479,0.897637).====END_TEST_8855======9657==\n==9657== HEAP SUMMARY:\n==9657==     in use at exit: 0 bytes in 0 blocks\n==9657==   total heap usage: 8 allocs, 8 frees, 922 bytes allocated\n==9657==\n==9657== All heap blocks were freed -- no leaks are possible\n==9657==\n==9657== For counts of detected and suppressed errors, rerun with: -v\n==9657== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==9660== exp-sgcheck, a stack and global array overrun detector\n==9660== NOTE: This is an Experimental-Class Valgrind Tool\n==9660== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==9660== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==9660== Command: outputeuZb9U\n==9660==\n====START_TEST_8855====Unesite broj elemenata:\nZ_1 = Z_2 = Z_3 =\nParalelna veza ovih elemenata ima impedansu Z_ = (2.51479,0.897637).====END_TEST_8855======9660==\n==9660== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 44 from 44)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3162": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite broj elemenata: \nZ_1 = \nParalelna veza ovih elemenata ima impedansu Z_ = (0,0).",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==9674== Memcheck, a memory error detector\n==9674== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==9674== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==9674== Command: output8r0a48\n==9674==\n====START_TEST_4983====Unesite broj elemenata:\nZ_1 =\nParalelna veza ovih elemenata ima impedansu Z_ = (0,0).====END_TEST_4983======9674==\n==9674== HEAP SUMMARY:\n==9674==     in use at exit: 0 bytes in 0 blocks\n==9674==   total heap usage: 4 allocs, 4 frees, 681 bytes allocated\n==9674==\n==9674== All heap blocks were freed -- no leaks are possible\n==9674==\n==9674== For counts of detected and suppressed errors, rerun with: -v\n==9674== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==9677== exp-sgcheck, a stack and global array overrun detector\n==9677== NOTE: This is an Experimental-Class Valgrind Tool\n==9677== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==9677== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==9677== Command: output8r0a48\n==9677==\n====START_TEST_4983====Unesite broj elemenata:\nZ_1 =\nParalelna veza ovih elemenata ima impedansu Z_ = (0,0).====END_TEST_4983======9677==\n==9677== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 44 from 44)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3163": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite broj elemenata: \nZ_1 = Z_2 = Z_3 = Z_4 = Z_5 = Z_6 = Z_7 = Z_8 = Z_9 = Z_10 = \nParalelna veza ovih elemenata ima impedansu Z_ = (0.161084,0.14308).",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==9691== Memcheck, a memory error detector\n==9691== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==9691== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==9691== Command: outputwHmEFv\n==9691==\n====START_TEST_5243====Unesite broj elemenata:\nZ_1 = Z_2 = Z_3 = Z_4 = Z_5 = Z_6 = Z_7 = Z_8 = Z_9 = Z_10 =\nParalelna veza ovih elemenata ima impedansu Z_ = (0.161084,0.14308).====END_TEST_5243======9691==\n==9691== HEAP SUMMARY:\n==9691==     in use at exit: 0 bytes in 0 blocks\n==9691==   total heap usage: 22 allocs, 22 frees, 1,720 bytes allocated\n==9691==\n==9691== All heap blocks were freed -- no leaks are possible\n==9691==\n==9691== For counts of detected and suppressed errors, rerun with: -v\n==9691== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==9694== exp-sgcheck, a stack and global array overrun detector\n==9694== NOTE: This is an Experimental-Class Valgrind Tool\n==9694== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==9694== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==9694== Command: outputwHmEFv\n==9694==\n====START_TEST_5243====Unesite broj elemenata:\nZ_1 = Z_2 = Z_3 = Z_4 = Z_5 = Z_6 = Z_7 = Z_8 = Z_9 = Z_10 =\nParalelna veza ovih elemenata ima impedansu Z_ = (0.161084,0.14308).====END_TEST_5243======9694==\n==9694== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 44 from 44)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1615640961
+}

@@ -1,0 +1,150 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Ispit 1, Zadatak 2",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "std::cout<<\"----------------------- AT 1 -----------------------\"<<std::endl;\n    \/\/ AT 1: Test main-a (primjer iz postavke)\n    \/*\n    5 6\n    0 2 3 0 0 6 0 0 0 0 0 0 0 4 0 0 0 3 0 2 0 0 0 0 0 0 0 0 0 0\n    *\/\n    {\n        _main();\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 2 -----------------------\"<<std::endl;\n    \/\/ AT 2: Test main-a (jedinicna matrica 4x4)\n    \/*\n    4 4\n    1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1\n    *\/\n\n    {\n        _main();\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 3 -----------------------\"<<std::endl;\n    \/\/ AT 3: Test main-a (elementi tipa double\/nema nula\/pravougaon matrica)\n    \/*\n    4 5\n    1.5 2.5 3.5 4.5 5.5 -1.5 -2.5 -3.5 -4.5 -5.5 11.5 12.5 13.5 14.5 15.5 -11.5 -12.5 -13.5 -14.5 -15.5\n    *\/\n    {\n        _main();\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 4 -----------------------\"<<std::endl;\n    \/\/ AT 4: Poziv funkcije\n    {\n        std::vector<std::vector<double>> m = { {1.0} };\n        std::vector<int> r, k;\n        AnalizaMatrice(m, r, k);\n\n        std::cout << \"OK\";\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5 6\n0 2 3 0 0 6 0 0 0 0 0 0 0 4 0 0 0 3 0 2 0 0 0 0 0 0 0 0 0 0\n4 4\n1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1\n4 5\n1.5 2.5 3.5 4.5 5.5 -1.5 -2.5 -3.5 -4.5 -5.5 11.5 12.5 13.5 14.5 15.5 -11.5 -12.5 -13.5 -14.5 -15.5\n"
+                },
+                "expect": [
+                    "----------------------- AT 1 -----------------------\nUnesi dimenzije: Unesi elemente: Nul-redovi: 1 4\nNul-kolone: 0 3 4\n----------------------- AT 2 -----------------------\nUnesi dimenzije: Unesi elemente: Nul-redovi: \nNul-kolone: \n----------------------- AT 3 -----------------------\nUnesi dimenzije: Unesi elemente: Nul-redovi: \nNul-kolone: \n----------------------- AT 4 -----------------------\nOK"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "5 6\n0 2 3 0 0 6 0 0 0 0 0 0 0 4 0 0 0 3 0 2 0 0 0 0 0 0 0 0 0 0\n4 4\n1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1\n4 5\n1.5 2.5 3.5 4.5 5.5 -1.5 -2.5 -3.5 -4.5 -5.5 11.5 12.5 13.5 14.5 15.5 -11.5 -12.5 -13.5 -14.5 -15.5\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "5 6\n0 2 3 0 0 6 0 0 0 0 0 0 0 4 0 0 0 3 0 2 0 0 0 0 0 0 0 0 0 0\n4 4\n1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1\n4 5\n1.5 2.5 3.5 4.5 5.5 -1.5 -2.5 -3.5 -4.5 -5.5 11.5 12.5 13.5 14.5 15.5 -11.5 -12.5 -13.5 -14.5 -15.5\n"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "above_main",
+                    "code": "void Ispisi(std::vector<int> r, std::vector<int> k)\n{\n    std::cout << \"Nul-redovi: \";\n    for (int e : r)\n        std::cout << e << \" \";\n    std::cout << std::endl << \"Nul-kolone: \";\n    for (int e : k)\n        std::cout << e << \" \";\n    std::cout << std::endl;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout<<\"----------------------- AT 5 -----------------------\"<<std::endl;\n    \/\/ AT 5: Proslijedjeni vektori nisu prazni 1\/2\n    std::cout << std::endl;\n    {\n        std::vector<std::vector<double>> m = { {0, 0, 0, 0}, {0, 1, 2, 3}, {0, 4, 5, 6}, {0, 7, 8, 9} };\n        std::vector<int> r{ 1 }, k{ 1 };\n        AnalizaMatrice(m, r, k);\n\n        Ispisi(r, k);\n    }\n    \n    std::cout<<std::endl<<\"----------------------- AT 6 -----------------------\"<<std::endl;\n    \/\/ AT 6: Proslijedjeni vektori nisu prazni 2\/2\n    std::cout << std::endl;\n    {\n        std::vector<std::vector<double>> m = { {1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 0} };\n        std::vector<int> r{ -1 }, k{ -1 };\n        AnalizaMatrice(m, r, k);\n\n        Ispisi(r, k);\n    }\n    \n    std::cout<<std::endl<<\"----------------------- AT 7 -----------------------\"<<std::endl;\n    \/\/ AT 7: Matrica formata 0x0\n    std::cout << std::endl;\n    {\n        std::vector<std::vector<double>> m;\n        std::vector<int> r{ 120 }, k{ 120 };\n        AnalizaMatrice(m, r, k);\n\n        Ispisi(r, k);\n    }\n    \n    std::cout<<std::endl<<\"----------------------- AT 8 -----------------------\"<<std::endl;\n    \/\/ AT 8: Matrica formata nx0\n    std::cout << std::endl;\n    {\n        std::vector<std::vector<double>> m(10);\n        std::vector<int> r, k;\n        AnalizaMatrice(m, r, k);\n\n        Ispisi(r, k);\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "----------------------- AT 5 -----------------------\n\nNul-redovi: 0\nNul-kolone: 0\n\n----------------------- AT 6 -----------------------\n\nNul-redovi: 3\nNul-kolone: 3\n\n----------------------- AT 7 -----------------------\n\nNul-redovi:\nNul-kolone:\n\n----------------------- AT 8 -----------------------\n\nNul-redovi:\nNul-kolone:\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "#include <algorithm>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void Ispisi(std::vector<int> r, std::vector<int> k)\n{\n    std::cout << \"Nul-redovi: \";\n    for (int e : r)\n        std::cout << e << \" \";\n    std::cout << std::endl << \"Nul-kolone: \";\n    for (int e : k)\n        std::cout << e << \" \";\n    std::cout << std::endl;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout<<\"----------------------- AT 9 -----------------------\"<<std::endl;\n    \/\/ AT 9: Sve nule\n    std::cout << std::endl;\n    {\n        std::vector<std::vector<double>> m(20, std::vector<double>(10, 0.0));\n        std::vector<int> r, k;\n        AnalizaMatrice(m, r, k);\n\n        Ispisi(r, k);\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 10 -----------------------\"<<std::endl;\n    \/\/ AT 10: Svi redovi i sve kolone pocinju sa 0\n    std::cout << std::endl;\n    {\n        std::vector<std::vector<double>> m(10, std::vector<double>(10, 0.1));\n        std::for_each(m.begin(), m.end(), [](auto& el)\n        {\n            el.at(0) = 0.0;\n        });\n\n        m.at(0) = std::vector<double>(10, 0.0);\n\n        std::vector<int> r, k;\n        AnalizaMatrice(m, r, k);\n\n        Ispisi(r, k);\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 11 -----------------------\"<<std::endl;\n    \/\/ AT 11: Matrica formata nx1 sa svim nulama\n    std::cout << std::endl;\n    {\n        std::vector<std::vector<double>> m(10, { 0.0 });\n\n        std::vector<int> r, k;\n        AnalizaMatrice(m, r, k);\n\n        Ispisi(r, k);\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 12 -----------------------\"<<std::endl;\n    \/\/ AT 12: Grbava matrica 1\/2\n    std::cout << std::endl;\n    {\n        std::vector<std::vector<double>> m(10);\n        int i = 0;\n        for (auto& el : m)\n            el.resize(++i);\n        std::vector<int> r, k;\n        try\n        {\n            AnalizaMatrice(m, r, k);\n            Ispisi(r, k);\n        }\n        catch (std::domain_error e)\n        {\n            std::cout << e.what();\n        }\n        catch (...)\n        {\n            std::cout << \"Pogresan izuzetak!\";\n        }\n    }\n\n    std::cout<<std::endl<<\"----------------------- AT 13 -----------------------\"<<std::endl;\n    \/\/ AT 13: Grbava matrica 2\/2\n    std::cout << std::endl;\n    {\n        std::vector<std::vector<double>> m(10, std::vector<double>(10, 1.0));\n        m.at(9).resize(9);\n        std::vector<int> r, k;\n        try\n        {\n            AnalizaMatrice(m, r, k);\n            Ispisi(r, k);\n        }\n        catch (std::domain_error e)\n        {\n            std::cout << e.what();\n        }\n        catch (...)\n        {\n            std::cout << \"Pogresan izuzetak!\";\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "----------------------- AT 9 -----------------------\n\nNul-redovi: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19\nNul-kolone: 0 1 2 3 4 5 6 7 8 9\n\n----------------------- AT 10 -----------------------\n\nNul-redovi: 0\nNul-kolone: 0\n\n----------------------- AT 11 -----------------------\n\nNul-redovi: 0 1 2 3 4 5 6 7 8 9\nNul-kolone: 0\n\n----------------------- AT 12 -----------------------\n\nGrbava matrica\n----------------------- AT 13 -----------------------\n\nGrbava matrica"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "buildhost_description": {
+        "id": "lab002-c28",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n"
+    },
+    "tools": {
+        "compile": "g++ (GCC) 6.2.0",
+        "compile[debug]": "g++ (GCC) 6.2.0",
+        "debug": "GNU gdb (GDB) Red Hat Enterprise Linux (7.2-92.el6)",
+        "profile[memcheck]": "valgrind-3.8.1",
+        "profile[sgcheck]": "valgrind-3.8.1"
+    },
+    "status": 4,
+    "test_results": {
+        "1": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "compile": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "In file included from /opt/gcc-6.2.0/include/c++/6.2.0/bits/basic_string.h:5402:0,\n                 from /opt/gcc-6.2.0/include/c++/6.2.0/string:52,\n                 from /opt/gcc-6.2.0/include/c++/6.2.0/bits/locale_classes.h:40,\n                 from /opt/gcc-6.2.0/include/c++/6.2.0/bits/ios_base.h:41,\n                 from /opt/gcc-6.2.0/include/c++/6.2.0/ios:42,\n                 from /opt/gcc-6.2.0/include/c++/6.2.0/ostream:38,\n                 from /opt/gcc-6.2.0/include/c++/6.2.0/iostream:39,\n                 from main.cpp:3:\n/opt/gcc-6.2.0/include/c++/6.2.0/ext/string_conversions.h: In function ‘_Ret __gnu_cxx::__stoa(_TRet (*)(const _CharT*, _CharT**, _Base ...), const char*, const _CharT*, std::size_t*, _Base ...)’:\n/opt/gcc-6.2.0/include/c++/6.2.0/ext/string_conversions.h:72:25: error: ‘ERANGE’ was not declared in this scope\n       else if (errno == ERANGE\n                         ^~~~~~\nIn file included from /opt/gcc-6.2.0/include/c++/6.2.0/system_error:39:0,\n                 from /opt/gcc-6.2.0/include/c++/6.2.0/bits/ios_base.h:46,\n                 from /opt/gcc-6.2.0/include/c++/6.2.0/ios:42,\n                 from /opt/gcc-6.2.0/include/c++/6.2.0/ostream:38,\n                 from /opt/gcc-6.2.0/include/c++/6.2.0/iostream:39,\n                 from main.cpp:3:\n/opt/gcc-6.2.0/include/c++/6.2.0/x86_64-pc-linux-gnu/bits/error_constants.h: At global scope:\n/opt/gcc-6.2.0/include/c++/6.2.0/x86_64-pc-linux-gnu/bits/error_constants.h:47:35: error: ‘EDOM’ was not declared in this scope\n       argument_out_of_domain =    EDOM,\n                                   ^~~~\n/opt/gcc-6.2.0/include/c++/6.2.0/x86_64-pc-linux-gnu/bits/error_constants.h:75:34: error: ‘EILSEQ’ was not declared in this scope\n       illegal_byte_sequence =    EILSEQ,\n                                  ^~~~~~\n/opt/gcc-6.2.0/include/c++/6.2.0/x86_64-pc-linux-gnu/bits/error_constants.h:148:32: error: ‘ERANGE’ was not declared in this scope\n       result_out_of_range =    ERANGE,\n                                ^~~~~~\nmain.cpp: In function ‘int main()’:\nmain.cpp:63:16: error: the value of ‘br1’ is not usable in a constant expression\n     array<int, br1> niz;\n                ^~~\nmain.cpp:59:9: note: ‘int br1’ is not const\n     int br1;\n         ^~~\nmain.cpp:63:19: error: the value of ‘br1’ is not usable in a constant expression\n     array<int, br1> niz;\n                   ^\nmain.cpp:59:9: note: ‘int br1’ is not const\n     int br1;\n         ^~~\nmain.cpp:63:19: note: in template argument for type ‘long unsigned int’\n     array<int, br1> niz;\n                   ^\nmain.cpp:66:13: error: request for member ‘at’ in ‘niz’, which is of non-class type ‘int’\n         niz.at(i);\n             ^~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "/opt/gcc-6.2.0/include/c++/6.2.0/ext/string_conversions.h",
+                            "line": "72",
+                            "col": "25",
+                            "message": "'ERANGE' was not declared in this scope",
+                            "code": "else if (errno == ERANGE"
+                        },
+                        {
+                            "type": "error",
+                            "file": "/opt/gcc-6.2.0/include/c++/6.2.0/x86_64-pc-linux-gnu/bits/error_constants.h",
+                            "line": "47",
+                            "col": "35",
+                            "message": "'EDOM' was not declared in this scope",
+                            "code": "argument_out_of_domain =    EDOM,"
+                        },
+                        {
+                            "type": "error",
+                            "file": "/opt/gcc-6.2.0/include/c++/6.2.0/x86_64-pc-linux-gnu/bits/error_constants.h",
+                            "line": "75",
+                            "col": "34",
+                            "message": "'EILSEQ' was not declared in this scope",
+                            "code": "illegal_byte_sequence =    EILSEQ,"
+                        },
+                        {
+                            "type": "error",
+                            "file": "/opt/gcc-6.2.0/include/c++/6.2.0/x86_64-pc-linux-gnu/bits/error_constants.h",
+                            "line": "148",
+                            "col": "32",
+                            "message": "'ERANGE' was not declared in this scope",
+                            "code": "result_out_of_range =    ERANGE,"
+                        },
+                        {
+                            "type": "error",
+                            "file": "main.cpp",
+                            "line": "63",
+                            "col": "16",
+                            "message": "the value of 'br1' is not usable in a constant expression",
+                            "code": "array<int, br1> niz;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "main.cpp",
+                            "line": "63",
+                            "col": "19",
+                            "message": "the value of 'br1' is not usable in a constant expression",
+                            "code": "array<int, br1> niz;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "main.cpp",
+                            "line": "66",
+                            "col": "13",
+                            "message": "request for member 'at' in 'niz', which is of non-class type 'int'",
+                            "code": "niz.at(i);"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "time": 1619108046
+}

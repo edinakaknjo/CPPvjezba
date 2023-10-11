@@ -1,0 +1,402 @@
+{
+    "buildhost_description": {
+        "id": "lab002-c03",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n"
+    },
+    "tools": {
+        "compile": "g++ (GCC) 6.2.0",
+        "compile[debug]": "g++ (GCC) 6.2.0",
+        "debug": "GNU gdb (GDB) Red Hat Enterprise Linux (7.2-92.el6)",
+        "profile[memcheck]": "valgrind-3.8.1",
+        "profile[sgcheck]": "valgrind-3.8.1"
+    },
+    "status": 4,
+    "test_results": {
+        "3557": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "{1,2,3}{1.2,2.2,3.2}",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==13267== Memcheck, a memory error detector\n==13267== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==13267== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13267== Command: outputnchtYq\n==13267==\n====START_TEST_2749===={1,2,3}{1.2,2.2,3.2}====END_TEST_2749======13267==\n==13267== HEAP SUMMARY:\n==13267==     in use at exit: 72,704 bytes in 1 blocks\n==13267==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==13267==\n==13267== LEAK SUMMARY:\n==13267==    definitely lost: 0 bytes in 0 blocks\n==13267==    indirectly lost: 0 bytes in 0 blocks\n==13267==      possibly lost: 0 bytes in 0 blocks\n==13267==    still reachable: 72,704 bytes in 1 blocks\n==13267==         suppressed: 0 bytes in 0 blocks\n==13267== Reachable blocks (those to which a pointer was found) are not shown.\n==13267== To see them, rerun with: --leak-check=full --show-reachable=yes\n==13267==\n==13267== For counts of detected and suppressed errors, rerun with: -v\n==13267== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==13271== exp-sgcheck, a stack and global array overrun detector\n==13271== NOTE: This is an Experimental-Class Valgrind Tool\n==13271== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==13271== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13271== Command: outputnchtYq\n==13271==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--13271-- WARNING: Serious error when reading debug info\n--13271-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--13271-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_2749===={1,2,3}{1.2,2.2,3.2}====END_TEST_2749======13271==\n==13271== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3559": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "4 6 2.07338e-317",
+                    "duration": 0,
+                    "status": false,
+                    "exit_code": 0,
+                    "success": 6
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 3,
+                    "duration": 1,
+                    "output": "==13293== Memcheck, a memory error detector\n==13293== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==13293== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13293== Command: outputiFLgNm\n==13293==\n==13293== Conditional jump or move depends on uninitialised value(s)\n==13293==    at 0x3715449BD0: __printf_fp (in /lib64/libc-2.12.so)\n==13293==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13293==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13293==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13293==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13293==    by 0x400E84: main (main.cpp:87)\n==13293==\n==13293== Conditional jump or move depends on uninitialised value(s)\n==13293==    at 0x3715449E71: __printf_fp (in /lib64/libc-2.12.so)\n==13293==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13293==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13293==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13293==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13293==    by 0x400E84: main (main.cpp:87)\n==13293==\n==13293== Conditional jump or move depends on uninitialised value(s)\n==13293==    at 0x3715443276: __mpn_extract_double (in /lib64/libc-2.12.so)\n==13293==    by 0x371544A09D: __printf_fp (in /lib64/libc-2.12.so)\n==13293==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13293==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13293==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13293==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13293==    by 0x400E84: main (main.cpp:87)\n==13293==\n==13293== Conditional jump or move depends on uninitialised value(s)\n==13293==    at 0x371544327B: __mpn_extract_double (in /lib64/libc-2.12.so)\n==13293==    by 0x371544A09D: __printf_fp (in /lib64/libc-2.12.so)\n==13293==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13293==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13293==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13293==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13293==    by 0x400E84: main (main.cpp:87)\n==13293==\n==13293== Conditional jump or move depends on uninitialised value(s)\n==13293==    at 0x371544A116: __printf_fp (in /lib64/libc-2.12.so)\n==13293==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13293==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13293==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13293==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13293==    by 0x400E84: main (main.cpp:87)\n==13293==\n==13293== Conditional jump or move depends on uninitialised value(s)\n==13293==    at 0x371544A582: __printf_fp (in /lib64/libc-2.12.so)\n==13293==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13293==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13293==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13293==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13293==    by 0x400E84: main (main.cpp:87)\n==13293==\n==13293== Use of uninitialised value of size 8\n==13293==    at 0x371544B896: __printf_fp (in /lib64/libc-2.12.so)\n==13293==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13293==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13293==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13293==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13293==    by 0x400E84: main (main.cpp:87)\n==13293==\n==13293== Use of uninitialised value of size 8\n==13293==    at 0x3715441BEC: __mpn_lshift (in /lib64/libc-2.12.so)\n==13293==    by 0x371544B89A: __printf_fp (in /lib64/libc-2.12.so)\n==13293==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13293==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13293==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13293==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13293==    by 0x400E84: main (main.cpp:87)\n==13293==\n==13293== Use of uninitialised value of size 8\n==13293==    at 0x3715441BF1: __mpn_lshift (in /lib64/libc-2.12.so)\n==13293==    by 0x371544B89A: __printf_fp (in /lib64/libc-2.12.so)\n==13293==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13293==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13293==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13293==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::cha",
+                    "exit_code": 0,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x3715449BD0: __printf_fp (in /lib64/libc-2.12.so)\n    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n    by 0x400E84: main (main.cpp:87)\n",
+                            "file": "TEST_CODE",
+                            "line": 10
+                        }
+                    ]
+                }
+            }
+        },
+        "3560": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "1.2 2.2 3.2",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==13323== Memcheck, a memory error detector\n==13323== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==13323== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13323== Command: outputDWuZ2l\n==13323==\n====START_TEST_3933====1.2 2.2 3.2\n====END_TEST_3933======13323==\n==13323== HEAP SUMMARY:\n==13323==     in use at exit: 72,704 bytes in 1 blocks\n==13323==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==13323==\n==13323== LEAK SUMMARY:\n==13323==    definitely lost: 0 bytes in 0 blocks\n==13323==    indirectly lost: 0 bytes in 0 blocks\n==13323==      possibly lost: 0 bytes in 0 blocks\n==13323==    still reachable: 72,704 bytes in 1 blocks\n==13323==         suppressed: 0 bytes in 0 blocks\n==13323== Reachable blocks (those to which a pointer was found) are not shown.\n==13323== To see them, rerun with: --leak-check=full --show-reachable=yes\n==13323==\n==13323== For counts of detected and suppressed errors, rerun with: -v\n==13323== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==13327== exp-sgcheck, a stack and global array overrun detector\n==13327== NOTE: This is an Experimental-Class Valgrind Tool\n==13327== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==13327== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13327== Command: outputDWuZ2l\n==13327==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--13327-- WARNING: Serious error when reading debug info\n--13327-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--13327-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_3933====1.2 2.2 3.2\n====END_TEST_3933======13327==\n==13327== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3561": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "5\n5",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==13349== Memcheck, a memory error detector\n==13349== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==13349== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13349== Command: outputItLzgv\n==13349==\n====START_TEST_2173====5\n5====END_TEST_2173======13349==\n==13349== HEAP SUMMARY:\n==13349==     in use at exit: 72,704 bytes in 1 blocks\n==13349==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==13349==\n==13349== LEAK SUMMARY:\n==13349==    definitely lost: 0 bytes in 0 blocks\n==13349==    indirectly lost: 0 bytes in 0 blocks\n==13349==      possibly lost: 0 bytes in 0 blocks\n==13349==    still reachable: 72,704 bytes in 1 blocks\n==13349==         suppressed: 0 bytes in 0 blocks\n==13349== Reachable blocks (those to which a pointer was found) are not shown.\n==13349== To see them, rerun with: --leak-check=full --show-reachable=yes\n==13349==\n==13349== For counts of detected and suppressed errors, rerun with: -v\n==13349== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==13353== exp-sgcheck, a stack and global array overrun detector\n==13353== NOTE: This is an Experimental-Class Valgrind Tool\n==13353== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==13353== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13353== Command: outputItLzgv\n==13353==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--13353-- WARNING: Serious error when reading debug info\n--13353-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--13353-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_2173====5\n5====END_TEST_2173======13353==\n==13353== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3562": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "{8,-6,0}",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==13375== Memcheck, a memory error detector\n==13375== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==13375== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13375== Command: output3myTsO\n==13375==\n====START_TEST_5838===={8,-6,0}====END_TEST_5838======13375==\n==13375== HEAP SUMMARY:\n==13375==     in use at exit: 72,704 bytes in 1 blocks\n==13375==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==13375==\n==13375== LEAK SUMMARY:\n==13375==    definitely lost: 0 bytes in 0 blocks\n==13375==    indirectly lost: 0 bytes in 0 blocks\n==13375==      possibly lost: 0 bytes in 0 blocks\n==13375==    still reachable: 72,704 bytes in 1 blocks\n==13375==         suppressed: 0 bytes in 0 blocks\n==13375== Reachable blocks (those to which a pointer was found) are not shown.\n==13375== To see them, rerun with: --leak-check=full --show-reachable=yes\n==13375==\n==13375== For counts of detected and suppressed errors, rerun with: -v\n==13375== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==13379== exp-sgcheck, a stack and global array overrun detector\n==13379== NOTE: This is an Experimental-Class Valgrind Tool\n==13379== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==13379== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13379== Command: output3myTsO\n==13379==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--13379-- WARNING: Serious error when reading debug info\n--13379-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--13379-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_5838===={8,-6,0}====END_TEST_5838======13379==\n==13379== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3563": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "{5,-1,3}",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==13402== Memcheck, a memory error detector\n==13402== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==13402== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13402== Command: outputKcxdDh\n==13402==\n====START_TEST_4235===={5,-1,3}====END_TEST_4235======13402==\n==13402== HEAP SUMMARY:\n==13402==     in use at exit: 72,704 bytes in 1 blocks\n==13402==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==13402==\n==13402== LEAK SUMMARY:\n==13402==    definitely lost: 0 bytes in 0 blocks\n==13402==    indirectly lost: 0 bytes in 0 blocks\n==13402==      possibly lost: 0 bytes in 0 blocks\n==13402==    still reachable: 72,704 bytes in 1 blocks\n==13402==         suppressed: 0 bytes in 0 blocks\n==13402== Reachable blocks (those to which a pointer was found) are not shown.\n==13402== To see them, rerun with: --leak-check=full --show-reachable=yes\n==13402==\n==13402== For counts of detected and suppressed errors, rerun with: -v\n==13402== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==13406== exp-sgcheck, a stack and global array overrun detector\n==13406== NOTE: This is an Experimental-Class Valgrind Tool\n==13406== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==13406== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13406== Command: outputKcxdDh\n==13406==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--13406-- WARNING: Serious error when reading debug info\n--13406-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--13406-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_4235===={5,-1,3}====END_TEST_4235======13406==\n==13406== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3564": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "{5,-1,3}",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==13428== Memcheck, a memory error detector\n==13428== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==13428== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13428== Command: outputiQ36KU\n==13428==\n====START_TEST_7141===={5,-1,3}====END_TEST_7141======13428==\n==13428== HEAP SUMMARY:\n==13428==     in use at exit: 72,704 bytes in 1 blocks\n==13428==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==13428==\n==13428== LEAK SUMMARY:\n==13428==    definitely lost: 0 bytes in 0 blocks\n==13428==    indirectly lost: 0 bytes in 0 blocks\n==13428==      possibly lost: 0 bytes in 0 blocks\n==13428==    still reachable: 72,704 bytes in 1 blocks\n==13428==         suppressed: 0 bytes in 0 blocks\n==13428== Reachable blocks (those to which a pointer was found) are not shown.\n==13428== To see them, rerun with: --leak-check=full --show-reachable=yes\n==13428==\n==13428== For counts of detected and suppressed errors, rerun with: -v\n==13428== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==13432== exp-sgcheck, a stack and global array overrun detector\n==13432== NOTE: This is an Experimental-Class Valgrind Tool\n==13432== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==13432== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13432== Command: outputiQ36KU\n==13432==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--13432-- WARNING: Serious error when reading debug info\n--13432-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--13432-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_7141===={5,-1,3}====END_TEST_7141======13432==\n==13432== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3565": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "{4,-3,0}\n4 0 2.07431e-317\n4 -3 0\n5",
+                    "duration": 0,
+                    "status": false,
+                    "exit_code": 0,
+                    "success": 6
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 3,
+                    "duration": 0,
+                    "output": "==13454== Memcheck, a memory error detector\n==13454== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==13454== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13454== Command: output8Nb4PH\n==13454==\n====START_TEST_339===={4,-3,0}\n==13454== Conditional jump or move depends on uninitialised value(s)\n==13454==    at 0x3715449BD0: __printf_fp (in /lib64/libc-2.12.so)\n==13454==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13454==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13454==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13454==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13454==    by 0x400EE9: main (main.cpp:91)\n==13454==\n==13454== Conditional jump or move depends on uninitialised value(s)\n==13454==    at 0x3715449E71: __printf_fp (in /lib64/libc-2.12.so)\n==13454==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13454==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13454==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13454==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13454==    by 0x400EE9: main (main.cpp:91)\n==13454==\n==13454== Conditional jump or move depends on uninitialised value(s)\n==13454==    at 0x3715443276: __mpn_extract_double (in /lib64/libc-2.12.so)\n==13454==    by 0x371544A09D: __printf_fp (in /lib64/libc-2.12.so)\n==13454==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13454==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13454==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13454==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13454==    by 0x400EE9: main (main.cpp:91)\n==13454==\n==13454== Conditional jump or move depends on uninitialised value(s)\n==13454==    at 0x371544327B: __mpn_extract_double (in /lib64/libc-2.12.so)\n==13454==    by 0x371544A09D: __printf_fp (in /lib64/libc-2.12.so)\n==13454==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13454==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13454==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13454==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13454==    by 0x400EE9: main (main.cpp:91)\n==13454==\n==13454== Conditional jump or move depends on uninitialised value(s)\n==13454==    at 0x371544A116: __printf_fp (in /lib64/libc-2.12.so)\n==13454==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13454==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13454==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13454==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13454==    by 0x400EE9: main (main.cpp:91)\n==13454==\n==13454== Conditional jump or move depends on uninitialised value(s)\n==13454==    at 0x371544A582: __printf_fp (in /lib64/libc-2.12.so)\n==13454==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13454==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13454==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13454==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13454==    by 0x400EE9: main (main.cpp:91)\n==13454==\n==13454== Use of uninitialised value of size 8\n==13454==    at 0x371544B896: __printf_fp (in /lib64/libc-2.12.so)\n==13454==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13454==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13454==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13454==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13454==    by 0x400EE9: main (main.cpp:91)\n==13454==\n==13454== Use of uninitialised value of size 8\n==13454==    at 0x3715441BEC: __mpn_lshift (in /lib64/libc-2.12.so)\n==13454==    by 0x371544B89A: __printf_fp (in /lib64/libc-2.12.so)\n==13454==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13454==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13454==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n==13454==    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n==13454==    by 0x400EE9: main (main.cpp:91)\n==13454==\n==13454== Use of uninitialised value of size 8\n==13454==    at 0x3715441BF1: __mpn_lshift (in /lib64/libc-2.12.so)\n==13454==    by 0x371544B89A: __printf_fp (in /lib64/libc-2.12.so)\n==13454==    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n==13454==    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n==13454==    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n==13454==    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostr",
+                    "exit_code": 0,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x3715449BD0: __printf_fp (in /lib64/libc-2.12.so)\n    by 0x371544577F: vfprintf (in /lib64/libc-2.12.so)\n    by 0x371546F631: vsnprintf (in /lib64/libc-2.12.so)\n    by 0x4CE7D9E: std::__convert_from_v(__locale_struct* const&, char*, int, char const*, ...) (c++locale.h:92)\n    by 0x4D1F871: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const (locale_facets.tcc:1005)\n    by 0x4D1FB7F: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const (locale_facets.tcc:1159)\n    by 0x4D2BB64: std::ostream& std::ostream::_M_insert<double>(double) (locale_facets.h:2434)\n    by 0x400EE9: main (main.cpp:91)\n",
+                            "file": "TEST_CODE",
+                            "line": 14
+                        }
+                    ]
+                }
+            }
+        },
+        "3566": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "OK",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==13476== Memcheck, a memory error detector\n==13476== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==13476== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13476== Command: outputCVmHqy\n==13476==\n====START_TEST_228====OK====END_TEST_228======13476==\n==13476== HEAP SUMMARY:\n==13476==     in use at exit: 72,704 bytes in 1 blocks\n==13476==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==13476==\n==13476== LEAK SUMMARY:\n==13476==    definitely lost: 0 bytes in 0 blocks\n==13476==    indirectly lost: 0 bytes in 0 blocks\n==13476==      possibly lost: 0 bytes in 0 blocks\n==13476==    still reachable: 72,704 bytes in 1 blocks\n==13476==         suppressed: 0 bytes in 0 blocks\n==13476== Reachable blocks (those to which a pointer was found) are not shown.\n==13476== To see them, rerun with: --leak-check=full --show-reachable=yes\n==13476==\n==13476== For counts of detected and suppressed errors, rerun with: -v\n==13476== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==13480== exp-sgcheck, a stack and global array overrun detector\n==13480== NOTE: This is an Experimental-Class Valgrind Tool\n==13480== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==13480== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==13480== Command: outputCVmHqy\n==13480==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--13480-- WARNING: Serious error when reading debug info\n--13480-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--13480-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_228====OK====END_TEST_228======13480==\n==13480== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1621551393
+}

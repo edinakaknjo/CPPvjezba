@@ -1,0 +1,341 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 5, Zadatak 6",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "        \/\/AT1 - Testiranje konstruktora - eventualne gre\u0161ke u testovima prijaviti na kerim.hodzic@etf.unsa.ba\n  DatotecniKontejner<int> dk1(\"ime1.DAT\");\n        DatotecniKontejner<int> dk2(\"ime1.DAT\");\n        DatotecniKontejner<int> dk3(\"ime2.DAT\");\n        std::cout<<dk1.DajBrojElemenata()<<\" \"<<dk2.DajBrojElemenata()<<std::endl;"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0 0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": " \/\/AT2 (c9) - Testiranje konstruktora\n        DatotecniKontejner<double> dk1(\"ime3.DAT\");\n        DatotecniKontejner<double> dk2(\"ime3.DAT\");\n        DatotecniKontejner<double> dk3(\"ime4.DAT\");\n        \n        dk1.DodajNoviElement(1.28);\n        \n        std::cout<<dk1.DajBrojElemenata()<<\" \"<<dk2.DajBrojElemenata()<<\" \"<<dk3.DajBrojElemenata();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1 1 0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "        \/\/AT3 (c9) - Testiranje konstruktora\n        DatotecniKontejner<int> dk1(\"ime5.DAT\");\n        DatotecniKontejner<int> dk2(\"ime5.DAT\");\n        DatotecniKontejner<int> dk3(\"ime6.DAT\");\n        \n        dk1.DodajNoviElement(1);\n                \n        dk2.DodajNoviElement(1);\n        \n        std::cout<<dk1.DajBrojElemenata()<<\" \"<<dk2.DajBrojElemenata()<<\" \"<<dk3.DajBrojElemenata();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "2 2 0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4 (c9) - Testiranje metode DodajNoviElement\n        DatotecniKontejner<int> dk1(\"ime7.DAT\");\n        DatotecniKontejner<int> dk2(\"ime7.DAT\");\n        \n        dk1.DodajNoviElement(6);\n        dk2.DodajNoviElement(1);\n        dk2.DodajNoviElement(3);\n        dk2.DodajNoviElement(6);\n        \n        std::cout<<dk1.DajBrojElemenata()<<\" \"<<dk2.DajBrojElemenata();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "4 4"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "          \/\/AT5 (c9) - Testiranje metode IzmijeniElement\n DatotecniKontejner<double> dk2(\"ime8.DAT\");\n        DatotecniKontejner<double> dk1(\"ime8.DAT\");\n\n        dk1.DodajNoviElement(6.7);\n        dk1.DodajNoviElement(1.7);\n        dk1.DodajNoviElement(3.6);\n        dk1.DodajNoviElement(6.2);\n        \n\n        std::cout<<dk1.DajElement(2)<<std::endl;\n        \n        dk1.IzmijeniElement(2,13.3);\n        \n        std::cout<<dk1.DajElement(2)<<std::endl;\n\n        std::cout<<dk1.DajBrojElemenata()<<\" \"<<dk2.DajBrojElemenata();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "3.6\n13.3\n4 4"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 7,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6 (c9) - Testiranje metode IzmijeniElement - Izuzetak\n\n        DatotecniKontejner<double> dk2(\"ime10.DAT\");\n        DatotecniKontejner<double> dk1(\"ime10.DAT\");\n        \n        dk1.DodajNoviElement(6.7);\n        dk1.DodajNoviElement(1.7);\n        dk1.DodajNoviElement(3.6);\n        dk1.DodajNoviElement(6.2);\n        try{\n\n        std::cout<<dk1.DajElement(2)<<std::endl;\n        \n        dk1.IzmijeniElement(4,13.3);\n        \n        std::cout<<dk2.DajElement(4)<<std::endl;\n\n        std::cout<<dk1.DajBrojElemenata()<<\" \"<<dk2.DajBrojElemenata()<<std::endl;\n        }\n        catch(std::range_error e) {\n            std::cout<<e.what();\n        }\n "
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "3.6\nNeispravna pozicija\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 8,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT7 (zamger) - Testiranje metode DajElement - Izuzetak\n\n        DatotecniKontejner<double> dk2(\"ime12.DAT\");\n        DatotecniKontejner<double> dk1(\"ime12.DAT\");\n        \n        dk1.DodajNoviElement(6.7);\n        dk1.DodajNoviElement(1.7);\n        dk1.DodajNoviElement(3.6);\n        dk1.DodajNoviElement(6.2);\n        try{\n\n        std::cout<<dk1.DajElement(4)<<std::endl;\n        \n        dk1.IzmijeniElement(4,13.3);\n        \n        std::cout<<dk2.DajElement(4)<<std::endl;\n\n        std::cout<<dk1.DajBrojElemenata()<<\" \"<<dk2.DajBrojElemenata()<<std::endl;\n        }\n        catch(std::range_error e) {\n            std::cout<<e.what();\n        }\n        \n"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Neispravna pozicija"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 9,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT8 - Testiranje metode DajElement - Izuzetak\n\n        DatotecniKontejner<double> dk1(\"ime13.DAT\");\n        DatotecniKontejner<double> dk2(\"ime13.DAT\");\n        \n        dk1.DodajNoviElement(6.7);\n        dk2.DodajNoviElement(1.7);\n        dk2.DodajNoviElement(3.6);\n        dk2.DodajNoviElement(6.2);\n        try{\n\n        std::cout<<dk1.DajElement(-2)<<std::endl;\n        \n        dk1.IzmijeniElement(4,13.3);\n        \n        std::cout<<dk2.DajElement(4)<<std::endl;\n\n        std::cout<<dk1.DajBrojElemenata()<<\" \"<<dk2.DajBrojElemenata()<<std::endl;\n        }\n        catch(std::range_error e) {\n            std::cout<<e.what();\n        }\n               \/\/Neispravna pozicija"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Neispravna pozicija"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 10,
+            "name": "Test 10",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT9  - Testiranje metode sortiraj\n\n        DatotecniKontejner<double> dk1(\"ime14.DAT\");\n        std::vector<double> v{2.8,1.2,3,4,5.6};\n        for(int i=0 ; i < v.size(); i++)\n            dk1.DodajNoviElement(v[i]);\n        std::cout<<\"Sortiran niz: \";\n        dk1.Sortiraj();\n        for(int i=0 ; i < v.size(); i++)\n            std::cout<<dk1.DajElement(i)<<\" \";"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Sortiran niz: 1.2 2.8 3 4 5.6"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 11,
+            "name": "Test 11",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "        DatotecniKontejner<double> dk1(\"ime14.DAT\");\n        std::vector<double> v{2.8,1.2,3,4,5.6};\n        for(int i=0 ; i < v.size(); i++)\n            dk1.DodajNoviElement(v[i]);\n        std::cout<<\"Sortiran niz: \";\n        dk1.Sortiraj(std::greater<int>());\n        for(int i=0 ; i < v.size(); i++)\n            std::cout<<dk1.DajElement(i)<<\" \";"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Sortiran niz: 5.6 4 3 2.8 1.2 "
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 12,
+            "name": "Test 12",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "        DatotecniKontejner<double> dk1(\"ime15.DAT\");\n        std::vector<double> v{-2 , 1, -4, 3, 5, -6};\n        for(int i=0 ; i < v.size(); i++) dk1.DodajNoviElement(v[i]);\n        std::cout<<\"Sortiran niz: \";\n        dk1.Sortiraj([](double a, double b) { return fabs(a) < fabs(b); });\n        for(int i=0 ; i < v.size(); i++)\n            std::cout<<dk1.DajElement(i)<<\" \";"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Sortiran niz: 1 -2 3 -4 5 -6\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 13,
+            "name": "Test 13",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "        DatotecniKontejner<char> dk1(\"ime16.DAT\");\n        std::vector<char> v{'d', 'c', 'a', 'b', 'e'};\n        for(int i=0 ; i < v.size(); i++) dk1.DodajNoviElement(v[i]);\n        std::cout<<\"Sortiran niz: \";\n        dk1.Sortiraj([](char a, char b) { return int(a) < int(b); });\n        for(int i=0 ; i < v.size(); i++)\n            std::cout<<dk1.DajElement(i)<<\" \";"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Sortiran niz: a b c d e\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 14,
+            "name": "Test 14",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "        DatotecniKontejner<short> dk1(\"ime17.DAT\");\n        std::vector<short> v {4, 3, 5, 34, 1, 45, 54, 22, 1, 234, 43, 234, 532, 12, 100, 101};\n\n\n        for(int i=0 ; i < v.size(); i++) dk1.DodajNoviElement(v[i]);\n        auto suma = [](short x) {int s = 0; while (x) s += x % 10, x \/= 10; return s;};\n    auto lambda = [suma](short a, short b) {if (suma(a) == suma(b)) return a < b; return suma (a) < suma (b);};\n        dk1.Sortiraj(lambda);\n        std::cout<<\"Sortiran niz: \";\n        for(int i=0 ; i < v.size(); i++)\n            std::cout<<dk1.DajElement(i)<<\" \";"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Sortiran niz: 1 1 100 101 3 12 4 22 5 34 43 45 54 234 234 532"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 15,
+            "name": "Test 15",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": " \/\/AT  - da li klasa sadrzi SAMO std::fstream\n    DatotecniKontejner<int> dk(\"ime19.DAT\");\n    std::cout<<sizeof(dk);"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "528"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

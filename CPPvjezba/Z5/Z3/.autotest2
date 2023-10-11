@@ -1,0 +1,201 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 5, Zadatak 3",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\/*\n\t\tAutor autotestova za zadatak 3 je Kemal Altwlkany.\n\t\tZa sva pitanja javiti se na: kaltwlkany1@etf.unsa.ba\n\t*\/\n\t\/\/ AT 01 - konstruktor (j)\n\t{\n\t\tstd::cout << \"--- AT 01 ---\\n\";\n\t\tTemperature t1(-1, 100);\n\t\tTemperature t2(-2, -1);\n\t\tTemperature t3(1101, 1102);\n\t\tTemperature t4(15, 15);\n\t\ttry{\n\t\t\tTemperature t5(-5, -6);\n\t\t}\n\t\tcatch(std::range_error e){\n\t\t\tstd::cout << e.what() << std::endl;\n\t\t\tstd::cout << \"OK.\\n\";\n\t\t}\n\t\ttry{\n\t\t\tTemperature t5(12, -1);\n\t\t}\n\t\tcatch(std::range_error e){\n\t\t\tstd::cout << e.what() << std::endl;\n\t\t\tstd::cout << \"OK.\\n\";\n\t\t}\n\t\ttry{\n\t\t\tTemperature t5(12, -1);\n\t\t}\n\t\tcatch(std::range_error e){\n\t\t\tstd::cout << e.what() << std::endl;\n\t\t\tstd::cout << \"OK.\\n\";\n\t\t}\n\t}"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "--- AT 01 ---\nNekorektne temperature\nOK.\nNekorektne temperature\nOK.\nNekorektne temperature\nOK.\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\/\/ AT 02 - registriraj temperature - tekst izuzetka (j)\n\t{\n\t\tstd::cout << \"--- AT 02 ---\\n\";\n\t\tTemperature t1(5, 10);\n\t\tt1.RegistrirajTemperature(std::make_pair(7, 8));\n\t\tt1.RegistrirajTemperature(std::make_pair(5, 10));\n\t\ttry{\n\t\t\tt1.RegistrirajTemperature(std::make_pair(5, 11));\n\t\t}\n\t\tcatch(std::range_error e){\n\t\t\tstd::cout << e.what() << std::endl;\n\t\t\tstd::cout << \"OK.\\n\";\n\t\t}\n\t}"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "--- AT 02 ---\nNekorektne temperature\nOK.\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\/\/ AT 08 - tekstovi izuzetaka za getter-e:\n\t\/\/ DajMin, DajMaks, DajVece, DajManje (j)\n\t{\n\t\tstd::cout << \"--- AT 08 ---\\n\";\n    \tTemperature a(-4,9);\n    \n    \ttry{\n        \ta.DajMinimalnuTemperaturu();\n        \tstd::cout << \"Ovo se ne smije ispisati.\";\n\t    }\n    \tcatch (const std::logic_error &e){\n        \tstd::cout << e.what() << std::endl;\n    \t} \n    \ttry{\n        \ta.DajMaksimalnuTemperaturu();\n        \tstd::cout << \"Ovo se ne smije ispisati.\";\n    \t}\n    \tcatch (const std::logic_error &e){\n        \tstd::cout << e.what() << std::endl;\n    \t}\n\n    \ttry{\n        \ta.DajBrojTemperaturaVecihOd(5);\n        \tstd::cout << \"Ovo se ne smije ispisati.\";\n\t    }\n    \tcatch (const std::logic_error &e){\n        \tstd::cout << e.what() << std::endl;\n    \t} \n    \ttry{\n        \ta.DajBrojTemperaturaManjihOd(5);\n        \tstd::cout << \"Ovo se ne smije ispisati.\";\n    \t}\n    \tcatch (const std::logic_error &e){\n        \tstd::cout << e.what() << std::endl;\n    \t}\n\t}"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "--- AT 08 ---\nNema registriranih temperatura\nNema registriranih temperatura\nNema registriranih temperatura\nNema registriranih temperatura\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\/\/ AT 10 - operator \"++\" (prefiksna i postfiksna verzija) (j)\n\t\/\/ svi testovi operatora podrazumijevaju da je implementiran i preklopljen operator \"<<\" !!!\n\t{\n\t\tstd::cout << \"--- AT 10 ---\\n\";\n    \tTemperature t(-100, 100);\n    \tfor(int i=10; i<100; i+=10) t.RegistrirajTemperature({-i, i});\n    \tstd::cout << \"Uneseno: \\n\";\n    \tstd::cout << t;\n\n    \tstd::cout << \"Nakon ++: \\n\";\n    \tt++;\n    \tstd::cout << t;\n\n    \tstd::cout << \"Nakon ++: \\n\";\t\n    \t++t;\n    \tstd::cout << t;\n\t}"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "--- AT 10 ---\nUneseno: \n-10 -20 -30 -40 -50 -60 -70 -80 -90 \n10 20 30 40 50 60 70 80 90 \nNakon ++: \n-9 -19 -29 -39 -49 -59 -69 -79 -89 \n10 20 30 40 50 60 70 80 90 \nNakon ++: \n-8 -18 -28 -38 -48 -58 -68 -78 -88 \n10 20 30 40 50 60 70 80 90 \n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\/\/ AT 14 - unarni operator \"-\" i unarni operator \"+\" (j)\n\t{\n\t\tstd::cout << \"--- AT 14 ---\\n\";\n    \tTemperature t1(-10, 10);\n    \tfor(int i=1; i<9; i+=1) t1.RegistrirajTemperature({-i, i});\n\n    \tstd::cout << \"Razlike minimalnih u odnosu na minimalno mogucu (-10): \\n\";\n    \tauto v1 = -t1;\n    \tfor(auto &x : v1) std::cout << x << \" \";\n    \tstd::cout << std::endl;\n\n    \tstd::cout << \"Razlike maksimalnih u odnosu na maksimalno mogucu (10): \\n\";\n    \tauto v2 = +t1;\n    \tfor(auto &x : v2) std::cout << x << \" \";\n    \tstd::cout << std::endl;\n\t}"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "--- AT 14 ---\nRazlike minimalnih u odnosu na minimalno mogucu (-10): \n9 8 7 6 5 4 3 2 \nRazlike maksimalnih u odnosu na maksimalno mogucu (10): \n-9 -8 -7 -6 -5 -4 -3 -2 \n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 8,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\/\/ AT 16 - binarni operator \"+\" primjer izuzetka (j)\n\t{\n\t\tstd::cout << \"--- AT 16 ---\\n\";\n\t\tTemperature t(-10, 10);\n\t\tfor(int i=1; i<6; i++) t.RegistrirajTemperature({-i, i});\n\t\ttry{\n\t\t\tt = t + 6;\n\t\t\tstd::cout << \"Nije OK!!! Treba se baciti izuzetak\\n\";\n\t\t}\n\t\tcatch(std::logic_error e){\n\t\t\tstd::cout << \"OK. \" << e.what() << std::endl;\n\t\t}\n\t}\n"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "--- AT 16 ---\nOK. Prekoracen dozvoljeni opseg temperatura\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 9,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\/\/ AT 15 - operator \"[]\" - tekst izuzetka (j)\n\t{\n\t\tstd::cout << \"--- AT 15 ---\\n\";\n    \tTemperature t1(-10, 10);\n    \tfor(int i=1; i<9; i+=1) t1.RegistrirajTemperature({-i, i});\n\n    \tstd::cout << \"5. Par glasi: \";\n    \tauto p1 = t1[5];\n    \tstd::cout << \"{\" << p1.first << \", \" << p1.second << \"}\\n\";\n\n    \tstd::cout << \"6. Par glasi: \";\n    \tauto p2 = t1[6];\n    \tstd::cout << \"{\" << p2.first << \", \" << p2.second << \"}\\n\";\n\n\n    \ttry{\n    \t\tauto p3 = t1[0];\n    \t\tstd::cout << \"Ovo se ne smije desiti!\\n\";\n    \t}\n    \tcatch(std::range_error e){\n    \t\tstd::cout << \"OK. \" << e.what() << std::endl;\n    \t}\n\n    \ttry{\n    \t\tauto p3 = t1[10];\n    \t\tstd::cout << \"Ovo se ne smije desiti!\\n\";\n    \t}\n    \tcatch(std::range_error e){\n    \t\tstd::cout << \"OK. \" << e.what() << std::endl;\n    \t}\n\n    \ttry{\n    \t\tauto p3 = t1[-5];\n    \t\tstd::cout << \"Ovo se ne smije desiti!\\n\";\n    \t}\n    \tcatch(std::range_error e){\n    \t\tstd::cout << \"OK. \" << e.what() << std::endl;\n    \t}\n\t}"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "--- AT 15 ---\n5. Par glasi: {-5, 5}\n6. Par glasi: {-6, 6}\nOK. Neispravan indeks\nOK. Neispravan indeks\nOK. Neispravan indeks\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

@@ -1,0 +1,535 @@
+{
+    "buildhost_description": {
+        "id": "lab002-c05",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n"
+    },
+    "tools": {
+        "compile": "g++ (GCC) 6.2.0",
+        "compile[debug]": "g++ (GCC) 6.2.0",
+        "debug": "GNU gdb (GDB) Red Hat Enterprise Linux (7.2-92.el6)",
+        "profile[memcheck]": "valgrind-3.8.1",
+        "profile[sgcheck]": "valgrind-3.8.1"
+    },
+    "status": 4,
+    "test_results": {
+        "3581": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:19:14: error: ‘Sat’ has not been declared\n std::cout << Sat::DaLiJeIspravno(10,15,30) << std::endl;\n              ^~~\nmain.cpp:21:14: error: ‘Sat’ has not been declared\n std::cout << Sat::DaLiJeIspravno(-10,15,30) << std::endl;\n              ^~~\nmain.cpp:22:14: error: ‘Sat’ has not been declared\n std::cout << Sat::DaLiJeIspravno(10,-15,30) << std::endl;\n              ^~~\nmain.cpp:23:14: error: ‘Sat’ has not been declared\n std::cout << Sat::DaLiJeIspravno(10,15,-30) << std::endl;\n              ^~~\nmain.cpp:25:14: error: ‘Sat’ has not been declared\n std::cout << Sat::DaLiJeIspravno(50,15,30) << std::endl;\n              ^~~\nmain.cpp:26:14: error: ‘Sat’ has not been declared\n std::cout << Sat::DaLiJeIspravno(10,105,30) << std::endl;\n              ^~~\nmain.cpp:27:14: error: ‘Sat’ has not been declared\n std::cout << Sat::DaLiJeIspravno(10,15,300) << std::endl;\n              ^~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "14",
+                            "message": "'Sat' has not been declared",
+                            "code": "std::cout << Sat::DaLiJeIspravno(10,15,30) << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "14",
+                            "message": "'Sat' has not been declared",
+                            "code": "std::cout << Sat::DaLiJeIspravno(-10,15,30) << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "14",
+                            "message": "'Sat' has not been declared",
+                            "code": "std::cout << Sat::DaLiJeIspravno(10,-15,30) << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 10,
+                            "col": "14",
+                            "message": "'Sat' has not been declared",
+                            "code": "std::cout << Sat::DaLiJeIspravno(10,15,-30) << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 12,
+                            "col": "14",
+                            "message": "'Sat' has not been declared",
+                            "code": "std::cout << Sat::DaLiJeIspravno(50,15,30) << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 13,
+                            "col": "14",
+                            "message": "'Sat' has not been declared",
+                            "code": "std::cout << Sat::DaLiJeIspravno(10,105,30) << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 14,
+                            "col": "14",
+                            "message": "'Sat' has not been declared",
+                            "code": "std::cout << Sat::DaLiJeIspravno(10,15,300) << std::endl;"
+                        }
+                    ]
+                }
+            }
+        },
+        "3582": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:19:3: error: ‘Sat’ was not declared in this scope\n   Sat s;\n   ^~~\nmain.cpp:20:3: error: ‘s’ was not declared in this scope\n   s.Postavi(10,15,30);\n   ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'Sat' was not declared in this scope",
+                            "code": "Sat s;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'s' was not declared in this scope",
+                            "code": "s.Postavi(10,15,30);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3583": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:19:3: error: ‘Sat’ was not declared in this scope\n   Sat s;\n   ^~~\nmain.cpp:21:5: error: ‘s’ was not declared in this scope\n     s.Postavi(-10,15,30);\n     ^\nmain.cpp:27:5: error: ‘s’ was not declared in this scope\n     s.Postavi(10,-15,30);\n     ^\nmain.cpp:33:5: error: ‘s’ was not declared in this scope\n     s.Postavi(10,15,-30);\n     ^\nmain.cpp:40:5: error: ‘s’ was not declared in this scope\n     s.Postavi(50,15,30);\n     ^\nmain.cpp:46:5: error: ‘s’ was not declared in this scope\n     s.Postavi(10,105,30);\n     ^\nmain.cpp:52:5: error: ‘s’ was not declared in this scope\n     s.Postavi(10,15,300);\n     ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'Sat' was not declared in this scope",
+                            "code": "Sat s;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "5",
+                            "message": "'s' was not declared in this scope",
+                            "code": "s.Postavi(-10,15,30);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 14,
+                            "col": "5",
+                            "message": "'s' was not declared in this scope",
+                            "code": "s.Postavi(10,-15,30);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 20,
+                            "col": "5",
+                            "message": "'s' was not declared in this scope",
+                            "code": "s.Postavi(10,15,-30);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 27,
+                            "col": "5",
+                            "message": "'s' was not declared in this scope",
+                            "code": "s.Postavi(50,15,30);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 33,
+                            "col": "5",
+                            "message": "'s' was not declared in this scope",
+                            "code": "s.Postavi(10,105,30);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 39,
+                            "col": "5",
+                            "message": "'s' was not declared in this scope",
+                            "code": "s.Postavi(10,15,300);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3584": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:19:3: error: ‘Sat’ was not declared in this scope\n   Sat s;\n   ^~~\nmain.cpp:20:3: error: ‘s’ was not declared in this scope\n   s.PostaviNormalizirano(-2, 3, 10);\n   ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'Sat' was not declared in this scope",
+                            "code": "Sat s;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'s' was not declared in this scope",
+                            "code": "s.PostaviNormalizirano(-2, 3, 10);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3585": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:19:3: error: ‘Sat’ was not declared in this scope\n   Sat s;\n   ^~~\nmain.cpp:20:3: error: ‘s’ was not declared in this scope\n   s.Postavi(10,10,10);\n   ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'Sat' was not declared in this scope",
+                            "code": "Sat s;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'s' was not declared in this scope",
+                            "code": "s.Postavi(10,10,10);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3586": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:19:3: error: ‘Sat’ was not declared in this scope\n   Sat s;\n   ^~~\nmain.cpp:20:3: error: ‘s’ was not declared in this scope\n   s.Postavi(10,10,10);\n   ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'Sat' was not declared in this scope",
+                            "code": "Sat s;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'s' was not declared in this scope",
+                            "code": "s.Postavi(10,10,10);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3587": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:19:3: error: ‘Sat’ was not declared in this scope\n   Sat s;\n   ^~~\nmain.cpp:20:3: error: ‘s’ was not declared in this scope\n   s.Postavi(10,10,10);\n   ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'Sat' was not declared in this scope",
+                            "code": "Sat s;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'s' was not declared in this scope",
+                            "code": "s.Postavi(10,10,10);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3588": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:19:3: error: ‘Sat’ was not declared in this scope\n   Sat s;\n   ^~~\nmain.cpp:20:3: error: ‘s’ was not declared in this scope\n   s.Postavi(10,10,10);\n   ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'Sat' was not declared in this scope",
+                            "code": "Sat s;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'s' was not declared in this scope",
+                            "code": "s.Postavi(10,10,10);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3589": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:19:3: error: ‘Sat’ was not declared in this scope\n   Sat s1, s2;\n   ^~~\nmain.cpp:20:3: error: ‘s1’ was not declared in this scope\n   s1.Postavi(10,10,10);\n   ^~\nmain.cpp:21:3: error: ‘s2’ was not declared in this scope\n   s2.Postavi(10,10,15);\n   ^~\nmain.cpp:22:41: error: ‘BrojSekundiIzmedju’ was not declared in this scope\n   std::cout << BrojSekundiIzmedju(s2, s1) << \" \"\n                                         ^\nmain.cpp:23:16: error: ‘Sat’ is not a class, namespace, or enumeration\n             << Sat::Razmak(s2, s1) << std::endl;\n                ^~~\nmain.cpp:25:16: error: ‘Sat’ is not a class, namespace, or enumeration\n             << Sat::Razmak(s1, s2) << std::endl;\n                ^~~\nmain.cpp:30:16: error: ‘Sat’ is not a class, namespace, or enumeration\n             << Sat::Razmak(s2, s1) << std::endl;\n                ^~~\nmain.cpp:32:16: error: ‘Sat’ is not a class, namespace, or enumeration\n             << Sat::Razmak(s1, s2);\n                ^~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'Sat' was not declared in this scope",
+                            "code": "Sat s1, s2;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'s1' was not declared in this scope",
+                            "code": "s1.Postavi(10,10,10);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "3",
+                            "message": "'s2' was not declared in this scope",
+                            "code": "s2.Postavi(10,10,15);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "41",
+                            "message": "'BrojSekundiIzmedju' was not declared in this scope",
+                            "code": "std::cout << BrojSekundiIzmedju(s2, s1) << \" \""
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 10,
+                            "col": "16",
+                            "message": "'Sat' is not a class, namespace, or enumeration",
+                            "code": "<< Sat::Razmak(s2, s1) << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 12,
+                            "col": "16",
+                            "message": "'Sat' is not a class, namespace, or enumeration",
+                            "code": "<< Sat::Razmak(s1, s2) << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 17,
+                            "col": "16",
+                            "message": "'Sat' is not a class, namespace, or enumeration",
+                            "code": "<< Sat::Razmak(s2, s1) << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 19,
+                            "col": "16",
+                            "message": "'Sat' is not a class, namespace, or enumeration",
+                            "code": "<< Sat::Razmak(s1, s2);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3590": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:19:3: error: ‘Sat’ was not declared in this scope\n   Sat s;\n   ^~~\nmain.cpp:20:3: error: ‘s’ was not declared in this scope\n   s.Postavi(10,10,10);\n   ^\nmain.cpp:21:9: error: ‘Sat’ does not name a type\n   const Sat sConst(s);\n         ^~~\nmain.cpp:22:16: error: ‘sConst’ was not declared in this scope\n   std::cout << sConst.DajSate() << \" \"\n                ^~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'Sat' was not declared in this scope",
+                            "code": "Sat s;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'s' was not declared in this scope",
+                            "code": "s.Postavi(10,10,10);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "9",
+                            "message": "'Sat' does not name a type",
+                            "code": "const Sat sConst(s);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "16",
+                            "message": "'sConst' was not declared in this scope",
+                            "code": "std::cout << sConst.DajSate() << \" \""
+                        }
+                    ]
+                }
+            }
+        },
+        "3591": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:20:3: error: ‘Sat’ was not declared in this scope\n   Sat s;\n   ^~~\nmain.cpp:21:23: error: ‘s’ was not declared in this scope\n   std::cout << sizeof(s);\n                       ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'Sat' was not declared in this scope",
+                            "code": "Sat s;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "23",
+                            "message": "'s' was not declared in this scope",
+                            "code": "std::cout << sizeof(s);"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "time": 1621547853
+}

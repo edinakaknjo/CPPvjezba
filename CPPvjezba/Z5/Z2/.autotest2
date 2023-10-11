@@ -1,0 +1,273 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 5, Zadatak 2",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 2\n\/\/ Odgovorni asistent: Mediha Zukic - mz14970@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <iomanip>\nconst double AT_PI = 4 * std::atan(1);\nconst double AT_eps = 1e-10;\nint AT_sirina_ispisa = 14;\n\ntemplate <typename T>\nvoid AT_Ispisi(T s1, T s2, bool withEndl = true) {\n\tstd::cout << std::setw(AT_sirina_ispisa) << s1 << std::setw(AT_sirina_ispisa) << s2;\n\tif (withEndl) std::cout << std::endl;\n}\n\ntemplate <typename T>\nT AT_zaokruzi(T x) {\n\tauto oldPrec = std::cout.precision();\n\treturn std::floor(x * std::pow(10, oldPrec) + 0.5) \/ std::pow(10, oldPrec) + AT_eps;\n}\n\ntemplate <typename T>\nvoid AT_Ispisi(std::pair<T, T> p, bool withEndl = true) {\n\tstd::cout << std::setw(AT_sirina_ispisa) << AT_zaokruzi(p.first) << std::setw(AT_sirina_ispisa) << AT_zaokruzi(p.second);\n\tif (withEndl) std::cout << std::endl;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 1: Test izuzetaka\n    \/\/ Napomena: Izuzetke ispisujete sa std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n    {\n        std::cout << std::fixed << std::setprecision(5);\n\n        auto fak = [](int k)\n        {\n            return k == 0 ? 8 * AT_PI * AT_PI \/ 3 : 4. \/ (k * k);\n        };\n        auto fbk = [](int k)\n        {\n            return -4 * AT_PI \/ k;\n        };\n        auto funkcija = [](double x)\n        {\n            return x * x;\n        };\n\n        \/\/ 1. konstruktor\n        try\n        {\n            FourierovRed f(2, {}, {});\n            std::cout << \"Not OK!\" << std::endl;\n        }\n        catch (std::domain_error e)\n        {\n            std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"\\nPogresan izuzetak\" << std::endl;\n        }\n\n        try\n        {\n            FourierovRed f(2, { 1 }, {});\n            std::cout << \"Not OK!\" << std::endl;\n        }\n        catch (std::domain_error e)\n        {\n            std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"\\nPogresan izuzetak\" << std::endl;\n        }\n\n        \/\/ 2. konstruktor\n        try\n        {\n            FourierovRed f(0, 2 * AT_PI, fak, fbk);\n            std::cout << \"Not OK!\" << std::endl;\n        }\n        catch (std::domain_error e)\n        {\n            std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"\\nPogresan izuzetak\" << std::endl;\n        }\n\n        try\n        {\n            FourierovRed f(-2, 2 * AT_PI, fak, fbk);\n            std::cout << \"Not OK!\" << std::endl;\n        }\n        catch (std::domain_error e)\n        {\n            std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"\\nPogresan izuzetak\" << std::endl;\n        }\n\n        \/\/ 3. konstruktor\n        try\n        {\n\n            FourierovRed f(-2, 0, 2 * AT_PI, funkcija, 1000);\n            std::cout << \"Not OK!\" << std::endl;\n        }\n        catch (std::domain_error e)\n        {\n            std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"\\nPogresan izuzetak\" << std::endl;\n        }\n\n\n        try\n        {\n            FourierovRed f(2, 0, 2 * AT_PI, funkcija, 0);\n            std::cout << \"Not OK!\" << std::endl;\n        }\n        catch (std::domain_error e)\n        {\n            std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"\\nPogresan izuzetak\" << std::endl;\n        }\n\n        try\n        {\n            FourierovRed f(2, 0, 2 * AT_PI, funkcija, -6);\n            std::cout << \"Not OK!\" << std::endl;\n        }\n        catch (std::domain_error e)\n        {\n            std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"\\nPogresan izuzetak\" << std::endl;\n        }\n\n        try\n        {\n            FourierovRed f(2, 2 * AT_PI, 0, funkcija, 1000);\n            std::cout << \"Not OK!\" << std::endl;\n        }\n        catch (std::range_error e)\n        {\n            std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"\\nPogresan izuzetak\" << std::endl;\n        }\n\n        \/\/ Operator []\n        try\n        {\n            FourierovRed f(50, 0, 2 * AT_PI, funkcija, 100);\n            f[51];\n            std::cout << \"Not OK!\" << std::endl;\n        }\n        catch (std::range_error e)\n        {\n            std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"\\nPogresan izuzetak\" << std::endl;\n        }\n\n        try\n        {\n            FourierovRed f(50, 0, 2 * AT_PI, funkcija, 100);\n            f[51] = std::make_pair<double>(5, 5);\n            std::cout << \"Not OK!\" << std::endl;\n        }\n        catch (std::range_error e)\n        {\n            std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"\\nPogresan izuzetak\" << std::endl;\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Stepen mora biti pozitivan\n\nIzuzetak: Stepen mora biti pozitivan\n\nIzuzetak: Stepen mora biti pozitivan\n\nIzuzetak: Stepen mora biti pozitivan\n\nIzuzetak: Stepen mora biti pozitivan\n\nIzuzetak: Broj podintervala mora biti pozitivan\n\nIzuzetak: Broj podintervala mora biti pozitivan\n\nIzuzetak: Neispravan interval\n\nIzuzetak: Neispravan indeks\n\nIzuzetak: Neispravan indeks\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 2\n\/\/ Odgovorni asistent: Mediha Zukic - mz14970@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 2: Test 1. konstruktora i operatora ()\n\t{\n\t\tstd::cout << std::fixed << std::setprecision(5);\n\t\tdouble L = 2;\n\t\tFourierovRed f(2 * L, { 26.31895, 4.00000, 1.00000, 0.44444, 0.25000, 0.16000, 0.11111, 0.08163, 0.06250, 0.04938, 0.04000 },\n\t\t\t{ -12.56637, -6.28319, -4.18879, -3.14159, -2.51327, -2.09440, -1.79520, -1.57080, -1.39626, -1.25664 });\n\n\t\tstd::initializer_list<double> xs = { 0.25, 0.5, 1, 1.5 };\n\t\tfor (auto x : xs) {\n\t\t\tstd::cout << \"f(\" << x << \") = \" << f(x) << std::endl;\n\t\t}\n\t}",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "f(0.25000) = -1.94981\nf(0.50000) = 0.23176\nf(1.00000) = 1.82896\nf(1.50000) = 6.13530\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 2\n\/\/ Odgovorni asistent: Mediha Zukic - mz14970@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <iomanip>\nconst double AT_PI = 4 * std::atan(1);\nconst double AT_eps = 1e-10;\nint AT_sirina_ispisa = 14;\n\ntemplate <typename T>\nvoid AT_Ispisi(T s1, T s2, bool withEndl = true) {\n\tstd::cout << std::setw(AT_sirina_ispisa) << s1 << std::setw(AT_sirina_ispisa) << s2;\n\tif (withEndl) std::cout << std::endl;\n}\n\ntemplate <typename T>\nT AT_zaokruzi(T x) {\n\tauto oldPrec = std::cout.precision();\n\treturn std::floor(x * std::pow(10, oldPrec) + 0.5) \/ std::pow(10, oldPrec) + AT_eps;\n}\n\ntemplate <typename T>\nvoid AT_Ispisi(std::pair<T, T> p, bool withEndl = true) {\n\tstd::cout << std::setw(AT_sirina_ispisa) << AT_zaokruzi(p.first) << std::setw(AT_sirina_ispisa) << AT_zaokruzi(p.second);\n\tif (withEndl) std::cout << std::endl;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 3: Test 1. konstruktora i operatora [] (read)\n    {\n        std::cout << std::fixed << std::setprecision(5);\n        double L = 2;\n        FourierovRed f1(2 * L,\n        { 2 * L, 1 },\n        {});\n        FourierovRed f2(2 * L,\n        {},\n        { -1.27324, 0.63662, -0.42441, 0.31831, -0.25465, 0.21221, -0.18189, 0.15915, -0.14147, 0.12732 });\n        FourierovRed f3(2 * L,\n        { 2 * L },\n        { -1.27324, 0.63662, -0.42441, 0.31831, -0.25465, 0.21221, -0.18189, 0.15915, -0.14147, 0.12732 });\n\n        try\n        {\n            AT_Ispisi(\"a[f2]\", \"b[f2]\", 0);\n            AT_Ispisi(\"a[f3]\", \"b[f3]\");\n            for (int i = 0; i <= 10; i++)\n            {\n                AT_Ispisi(f2[i], 0);\n                AT_Ispisi(f3[i]);\n            }\n            std::cout << std::endl;\n            std::cout << \"Ispis prva 3 koeficijenta iz f1:\" << std::endl;\n            AT_Ispisi(f1[0]);\n            AT_Ispisi(f1[1]);\n            AT_Ispisi(f1[2]);\n        }\n        catch (std::range_error e)\n        {\n            std::cout << e.what() << std::endl;\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "         a[f2]         b[f2]         a[f3]         b[f3]\n       0.00000       0.00000       4.00000       0.00000\n       0.00000      -1.27324       0.00000      -1.27324\n       0.00000       0.63662       0.00000       0.63662\n       0.00000      -0.42441       0.00000      -0.42441\n       0.00000       0.31831       0.00000       0.31831\n       0.00000      -0.25465       0.00000      -0.25465\n       0.00000       0.21221       0.00000       0.21221\n       0.00000      -0.18189       0.00000      -0.18189\n       0.00000       0.15915       0.00000       0.15915\n       0.00000      -0.14147       0.00000      -0.14147\n       0.00000       0.12732       0.00000       0.12732\n\nIspis prva 3 koeficijenta iz f1:\n       4.00000       0.00000\n       1.00000       0.00000\nNeispravan indeks\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 2\n\/\/ Odgovorni asistent: Mediha Zukic - mz14970@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <iomanip>\nconst double AT_PI = 4 * std::atan(1);\nconst double AT_eps = 1e-10;\nint AT_sirina_ispisa = 14;\n\ntemplate <typename T>\nvoid AT_Ispisi(T s1, T s2, bool withEndl = true) {\n\tstd::cout << std::setw(AT_sirina_ispisa) << s1 << std::setw(AT_sirina_ispisa) << s2;\n\tif (withEndl) std::cout << std::endl;\n}\n\ntemplate <typename T>\nT AT_zaokruzi(T x) {\n\tauto oldPrec = std::cout.precision();\n\treturn std::floor(x * std::pow(10, oldPrec) + 0.5) \/ std::pow(10, oldPrec) + AT_eps;\n}\n\ntemplate <typename T>\nvoid AT_Ispisi(std::pair<T, T> p, bool withEndl = true) {\n\tstd::cout << std::setw(AT_sirina_ispisa) << AT_zaokruzi(p.first) << std::setw(AT_sirina_ispisa) << AT_zaokruzi(p.second);\n\tif (withEndl) std::cout << std::endl;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 4: Test 3. konstruktora i operatora ()\n    {\n        \/\/ f(x) = x^2\n        \/\/ od 0 do 2AT_PI\n        \/\/ a0 = 8*pi^2\/3; ak = 4\/(k^2) za k > 0; bk = -4*pi\/k\n        auto f = [](double x)\n        {\n            return x * x;\n        };\n        FourierovRed f2(100, 0, 2 * AT_PI, f, 1000); \/\/ 3. konstruktor\n        if (std::fabs(f2(3) - 9.06238) < 0.005)\n            std::cout << \"OK!\";\n        else\n            std::cout << \"Dobivene vrijednosti se previse razlikuju!\\n\" << std::endl;\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 2\n\/\/ Odgovorni asistent: Mediha Zukic - mz14970@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <iomanip>\nconst double AT_PI = 4 * std::atan(1);\nconst double AT_eps = 1e-10;\nint AT_sirina_ispisa = 14;\n\ntemplate <typename T>\nvoid AT_Ispisi(T s1, T s2, bool withEndl = true) {\n\tstd::cout << std::setw(AT_sirina_ispisa) << s1 << std::setw(AT_sirina_ispisa) << s2;\n\tif (withEndl) std::cout << std::endl;\n}\n\ntemplate <typename T>\nT AT_zaokruzi(T x) {\n\tauto oldPrec = std::cout.precision();\n\treturn std::floor(x * std::pow(10, oldPrec) + 0.5) \/ std::pow(10, oldPrec) + AT_eps;\n}\n\ntemplate <typename T>\nvoid AT_Ispisi(std::pair<T, T> p, bool withEndl = true) {\n\tstd::cout << std::setw(AT_sirina_ispisa) << AT_zaokruzi(p.first) << std::setw(AT_sirina_ispisa) << AT_zaokruzi(p.second);\n\tif (withEndl) std::cout << std::endl;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 5: Test 2. i 3. konstruktora i operatora dodjele\n\t{\n\t\t\/\/ f(x) = x^2\n\t\t\/\/ od 0 do 2AT_PI\n\t\t\/\/ a0 = 8*pi^2\/3; ak = 4\/(k^2) za k > 0; bk = -4*pi\/k\n\n\t\tstd::cout << std::fixed << std::setprecision(5);\n\t\tauto k1 = [](int k) { return k == 0 ? 8 * AT_PI * AT_PI \/ 3 : 4. \/ (k * k); };\n\t\tauto k2 = [](int k) { return -4 * AT_PI \/ k; };\n\t\tauto f = [](double x) { return x * x; };\n\n\t\tFourierovRed f1(50, 2 * AT_PI, k1, k2); \/\/ 2. konstruktor\n\t\tFourierovRed f2(50, 0, 2 * AT_PI, f, 1000); \/\/ 3. konstruktor\n\n\t\tAT_Ispisi(\"a[f1]\", \"b[f1]\");\n\t\tfor (int i = 0; i <= 10; i++)\n\t\t\tAT_Ispisi(f1[i]);\n\n\t\tstd::cout << std::endl;\n\n\t\tAT_Ispisi(\"a[f2]\", \"b[f2]\");\n\t\tfor (int i = 0; i <= 10; i++)\n\t\t\tAT_Ispisi(f2[i]);\n\n\t\tstd::cout << std::endl;\n\t\tif (std::fabs(f1(3) - f2(3) < 0.004))\n\t\t\tstd::cout << \"OK!\\n\";\n\t\telse\n\t\t\tstd::cout << \"Dobivene vrijednosti se previse razlikuju!\\n\";\n\n\t\tstd::cout << std::endl;\n\t\tstd::cout << \"Dodjela f2 = f1\" << std::endl << std::endl;\n\t\tf2 = f1 = f2 = f1;\n\t\tAT_Ispisi(\"f1(3)\", \"f2(3)\");\n\t\tAT_Ispisi(f1(3), f2(3));\n\t}",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "         a[f1]         b[f1]\n      26.31895       0.00000\n       4.00000     -12.56637\n       1.00000      -6.28319\n       0.44444      -4.18879\n       0.25000      -3.14159\n       0.16000      -2.51327\n       0.11111      -2.09440\n       0.08163      -1.79520\n       0.06250      -1.57080\n       0.04938      -1.39626\n       0.04000      -1.25664\n\n         a[f2]         b[f2]\n      26.31896       0.00000\n       4.00001     -12.56633\n       1.00001      -6.28310\n       0.44446      -4.18867\n       0.25001      -3.14143\n       0.16001      -2.51307\n       0.11112      -2.09415\n       0.08165      -1.79491\n       0.06251      -1.57047\n       0.04940      -1.39589\n       0.04001      -1.25622\n\nOK!\n\nDodjela f2 = f1\n\n         f1(3)         f2(3)\n       9.09567       9.09567\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 7,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 2\n\/\/ Odgovorni asistent: Mediha Zukic - mz14970@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <iomanip>\nconst double AT_PI = 4 * std::atan(1);\nconst double AT_eps = 1e-10;\nint AT_sirina_ispisa = 14;\n\ntemplate <typename T>\nvoid AT_Ispisi(T s1, T s2, bool withEndl = true) {\n\tstd::cout << std::setw(AT_sirina_ispisa) << s1 << std::setw(AT_sirina_ispisa) << s2;\n\tif (withEndl) std::cout << std::endl;\n}\n\ntemplate <typename T>\nT AT_zaokruzi(T x) {\n\tauto oldPrec = std::cout.precision();\n\treturn std::floor(x * std::pow(10, oldPrec) + 0.5) \/ std::pow(10, oldPrec) + AT_eps;\n}\n\ntemplate <typename T>\nvoid AT_Ispisi(std::pair<T, T> p, bool withEndl = true) {\n\tstd::cout << std::setw(AT_sirina_ispisa) << AT_zaokruzi(p.first) << std::setw(AT_sirina_ispisa) << AT_zaokruzi(p.second);\n\tif (withEndl) std::cout << std::endl;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 6: Test konstruktora kopije (plitke\/duboke kopije) i operatora [] i ()\n    {\n        std::cout << std::fixed << std::setprecision(2);\n        auto k1 = [](int k)\n        {\n            return (k == 0) ? 8 * AT_PI * AT_PI \/ 3 : 4. \/ (k * k);\n        };\n        auto k2 = [](int k)\n        {\n            return -4 * AT_PI \/ k;\n        };\n        const FourierovRed f1(50, 2 * AT_PI, k1, k2);\n        FourierovRed* f2 = new FourierovRed(f1);\n        FourierovRed* f3 = new FourierovRed(*f2);\n\n        delete f2;\n\n        AT_Ispisi(\"a[f3]\", \"b[f3]\");\n        for (int i = 0; i <= 10; i++)\n            AT_Ispisi((*f3)[i]);\n        std::cout << \"f3(2) = \" << (*f3)(2) << std::endl;\n\n        delete f3;\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "         a[f3]         b[f3]\n         26.32          0.00\n          4.00        -12.57\n          1.00         -6.28\n          0.44         -4.19\n          0.25         -3.14\n          0.16         -2.51\n          0.11         -2.09\n          0.08         -1.80\n          0.06         -1.57\n          0.05         -1.40\n          0.04         -1.26\nf3(2) = 4.13\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 8,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 2\n\/\/ Odgovorni asistent: Mediha Zukic - mz14970@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <iomanip>\nconst double AT_PI = 4 * std::atan(1);\nconst double AT_eps = 1e-10;\nint AT_sirina_ispisa = 14;\n\ntemplate <typename T>\nvoid AT_Ispisi(T s1, T s2, bool withEndl = true) {\n\tstd::cout << std::setw(AT_sirina_ispisa) << s1 << std::setw(AT_sirina_ispisa) << s2;\n\tif (withEndl) std::cout << std::endl;\n}\n\ntemplate <typename T>\nT AT_zaokruzi(T x) {\n\tauto oldPrec = std::cout.precision();\n\treturn std::floor(x * std::pow(10, oldPrec) + 0.5) \/ std::pow(10, oldPrec) + AT_eps;\n}\n\ntemplate <typename T>\nvoid AT_Ispisi(std::pair<T, T> p, bool withEndl = true) {\n\tstd::cout << std::setw(AT_sirina_ispisa) << AT_zaokruzi(p.first) << std::setw(AT_sirina_ispisa) << AT_zaokruzi(p.second);\n\tif (withEndl) std::cout << std::endl;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 7: Test pomjerajuceg konstruktora kopije i pomjerajuceg operatora dodjele\n    {\n        double L = 2;\n        auto k1 = [L](int k)\n        {\n            return (k == 0) ? 2 * L : 0;\n        };\n        auto k2 = [L](int k)\n        {\n            return (k % 2 == 0) ? 2 * L \/ (k * AT_PI) : -2 * L \/ (k * AT_PI);\n        };\n        FourierovRed f1(50, 2 * L, k1, k2);\n        double* p1 = &(f1[0].first);\n        FourierovRed f2(std::move(f1));\n        FourierovRed f3(7, { 7, 7 }, { 7 });\n        double* p2 = &(f2[0].first);\n        f3 = std::move(f2);\n        double* p3 = &(f3[0].first);\n\n        std::cout << \"Pomjerajuci konstruktor kopije: \" << (p1 == p2 ? \"OK!\" : \"Not OK!\") << std::endl;\n        std::cout << \"Pomjerajuci operator dodjele: \" << (p2 == p3 ? \"OK!\" : \"Not OK!\") << std::endl << std::endl;\n\n        AT_Ispisi(\"a[f3]\", \"b[f3]\");\n        std::cout << std::fixed << std::setprecision(3);\n        for (int i = 0; i < 5; i++)\n        {\n            AT_Ispisi(f3[i]);\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Pomjerajuci konstruktor kopije: OK!\nPomjerajuci operator dodjele: OK!\n\n         a[f3]         b[f3]\n         4.000         0.000\n         0.000        -1.273\n         0.000         0.637\n         0.000        -0.424\n         0.000         0.318\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

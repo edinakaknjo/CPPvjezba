@@ -1,0 +1,40 @@
+{
+    "buildhost_description": {
+        "id": "lab002-c28",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n"
+    },
+    "tools": {
+        "compile": "g++ (GCC) 6.2.0",
+        "compile[debug]": "g++ (GCC) 6.2.0",
+        "debug": "GNU gdb (GDB) Red Hat Enterprise Linux (7.2-92.el6)",
+        "profile[memcheck]": "valgrind-3.8.1",
+        "profile[sgcheck]": "valgrind-3.8.1"
+    },
+    "status": 4,
+    "test_results": {
+        "1": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "compile": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In instantiation of ‘void SortirajMatricu(std::vector<std::vector<TipEl> >&) [with NekiTip = int]’:\nmain.cpp:53:28:   required from here\nmain.cpp:34:9: error: no matching function for call to ‘sort(__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type&, __gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type&, <unresolved overloaded function type>)’\n     sort(matrica.at(0), matrica.at(matrica.size()), Kriterij);\n     ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nIn file included from /opt/gcc-6.2.0/include/c++/6.2.0/algorithm:62:0,\n                 from main.cpp:4:\n/opt/gcc-6.2.0/include/c++/6.2.0/bits/stl_algo.h:4697:5: note: candidate: template<class _RAIter> void std::sort(_RAIter, _RAIter)\n     sort(_RandomAccessIterator __first, _RandomAccessIterator __last)\n     ^~~~\n/opt/gcc-6.2.0/include/c++/6.2.0/bits/stl_algo.h:4697:5: note:   template argument deduction/substitution failed:\nmain.cpp:34:9: note:   candidate expects 2 arguments, 3 provided\n     sort(matrica.at(0), matrica.at(matrica.size()), Kriterij);\n     ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nIn file included from /opt/gcc-6.2.0/include/c++/6.2.0/algorithm:62:0,\n                 from main.cpp:4:\n/opt/gcc-6.2.0/include/c++/6.2.0/bits/stl_algo.h:4727:5: note: candidate: template<class _RAIter, class _Compare> void std::sort(_RAIter, _RAIter, _Compare)\n     sort(_RandomAccessIterator __first, _RandomAccessIterator __last,\n     ^~~~\n/opt/gcc-6.2.0/include/c++/6.2.0/bits/stl_algo.h:4727:5: note:   template argument deduction/substitution failed:\nmain.cpp:34:9: note:   couldn't deduce template parameter ‘_Compare’\n     sort(matrica.at(0), matrica.at(matrica.size()), Kriterij);\n     ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "main.cpp",
+                            "line": "34",
+                            "col": "9",
+                            "message": "no matching function for call to 'sort(__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type&, __gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type&, <unresolved overloaded function type>)'",
+                            "code": "sort(matrica.at(0), matrica.at(matrica.size()), Kriterij);"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "time": 1619774510
+}
